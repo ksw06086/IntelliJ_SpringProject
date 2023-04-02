@@ -11,7 +11,7 @@
         select * from board_table order by id desc
     </select>
     <select id="findById" parameterType="Long" resultType="board">
-        select * from board_table where id=#{id}
+        select * from board_table where id = #{id}
     </select>
     <update id="updateHits" parameterType="Long">
         update board_table set boardHits = boardHits + 1 where id=#{id}
@@ -24,6 +24,7 @@
         where id=#{id}
     </update>
     <select id="pagingList" parameterType="java.util.HashMap" resultType="board">
+        -- limit : 위에서부터 어디부터 몇개를 보여주는 키워드 limit 0, 3 => 가장 위에부터 3개 보여주어라
         select * from board_table order by id desc limit #{start}, #{limit}
     </select>
     <select id="boardCount" resultType="Integer">
