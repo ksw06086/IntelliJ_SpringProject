@@ -1,0 +1,18 @@
+pom.xml -> 라이브러리 추가할 때 사용하는 용도
+ㄴ 현재 pom.xml에 게시판 제작에 필요한 모든 것들 들어와있음
+ㄴ JDBC 연결할 때에도 pom.xml 이용
+
+<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+<!-- ViewResolver가 리턴값을 해당 폴더(값이 맞아야 함)에서 찾아서 뒤에 (.jsp)붙여서 찾게 됨 -->
+<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <beans:property name="prefix" value="/WEB-INF/views/" />
+    <beans:property name="suffix" value=".jsp" />
+</beans:bean>
+
+<!-- 프로젝트 패키지이름 확인 -->
+<context:component-scan base-package="com.codingrecipe.project01" />
+
+*** 톰캣 연결 ***
+위에 환경설정란이 있음 망치 있는 곳 거기에 tomcat을 연결해주어야 하는데
+1. file - setting - plugIn - smart tomcat 설치 - 그 후 망치에서 연결해줌
+2. 연결시에 VM 쪽에 실행될 때 한글이 패치가 안될 때가 있어서 패치를 해주어야함 -> -Dfile.encoding=UTF-8
