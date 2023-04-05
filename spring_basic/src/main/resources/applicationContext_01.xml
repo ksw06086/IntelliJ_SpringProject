@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- SamsungTV 클래스를 스프링 설정파일에 등록하고
+        스프링 컨테이너가 bean을 읽어들어서 객체생성을 한다.
+     -->
+
+    <!-- id = '참조변수' class = "패키지명.클래스명" -->
+    <!-- SamsungTV tv = new SamsungTV(); -->
+
+    <bean id="sstv" class="com.spring.basic.ch01.SamsungTV" />
+</beans>

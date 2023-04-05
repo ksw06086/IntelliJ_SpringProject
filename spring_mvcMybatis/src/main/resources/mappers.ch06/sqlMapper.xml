@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="UserRepository6">
+	 <select id = "getUsers" resultType = "spring.mvc.mybatis.ch05.dto.User5">
+		select user_id userId, user_name userName, reg_date regDate 
+		from member 
+		order by user_id
+	</select>
+	
+	 <select id = "getUser" parameterType="int" resultMap = "userMap">
+		select user_id, user_name, reg_date 
+		from member 
+		where user_id = #{userId}
+	</select>
+	
+	
+	 jdbcType : null값이 들어올 가능성이 있으므로 반드시 jdbcType을 설정해야 함
+	 <insert id = "addUser" parameterType="spring.mvc.mybatis.ch05.dto.User5">
+		insert into member(user_id, user_name, reg_date)
+		values (#{userId, jdbcType=NUMERIC}, #{userName, jdbcType=VARCHAR}, 
+				#{regDate, jdbcType=DATE})
+	</insert>
+	
+	<update id = "updateUser" parameterType="spring.mvc.mybatis.ch05.dto.User5">
+		update member
+		set user_name = #{userName, jdbcType=VARCHAR},
+			reg_date = #{regDate, jdbcType=DATE}
+		where user_id = #{userId, jdbcType=NUMERIC}
+	</update>
+	
+	<delete id = "deleteUser" parameterType="int">
+		delete member
+		where user_id = #{userId, jdbcType=NUMERIC}
+	</delete>
+</mapper>

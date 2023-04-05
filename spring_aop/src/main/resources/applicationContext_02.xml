@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <!-- 방법 1. xml을 잉요한 AOP 설정 -->
+    <!-- 공통기능(횡단관심)을 제공할 클래스를 빈으로 등극 -->
+    <bean id = "workaop" class = "com.spring.aop.WorkAop"/>
+    <aop:config>
+        <aop:aspect id = "worker" ref = "workaop">
+            <!-- aop 패키지 하위의 파라미터가 없는 모든 클래스의 메소드(=핵심관심)에 포인트 컷을 지정 -->
+            <aop:pointcut id = "allpoint" expression="execution(* com.spring.aop.*.*())" />
+            <aop:around pointcut-ref = "allpoint" method="workingAop" />
+        </aop:aspect>
+    </aop:config>
+
+    <bean id = "work" class="com.spring.aop.Worker">
+        <property name="part" value="돼지고기"/>
+        <property name="name" value="김선우"/>
+        <property name="msg" value="일하기 너무너무너무너무너무 싫다~~~~~~~~~~~"/>
+    </bean>
+
+
+</beans>

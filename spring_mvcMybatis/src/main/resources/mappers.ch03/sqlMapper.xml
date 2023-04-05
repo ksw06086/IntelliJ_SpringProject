@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="UserRepository3">
+	<resultMap type="spring.mvc.mybatis.ch03.dto.User3" id="userMap">
+		<id property="userId" column = "user_id"/>
+		<result property="userName" column = "user_name"/>
+		<result property="regDate" column = "reg_date"/>
+		
+		<collection property="posts" columnPrefix="post_" ofType="spring.mvc.mybatis.ch03.dto.Post3">
+			<result property="title" column="title"/>
+			<result property="content" column="content"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 1. 동적 SQL --> <!-- 검색 기능 -->
+	<select id = "getSearch1" parameterType = "spring.mvc.mybatis.ch03.dto.Search3" resultMap = "userMap">
+		select m.user_id, m.user_name, m.reg_date, p.post_title, p.post_content 
+		from member m join posts p
+		on m.user_id = p.user_id
+		where m.user_name = #{userName}
+		<if test="post!=null and post.title != null">
+		and p.post_title like '%' || #{post.title} || '%'
+		</if>
+		<if test="post!=null and post.content != null">
+		and p.post_content like '%' || #{post.content} || '%'
+		</if>
+	</select>
+	
+	<!-- 1. 동적 SQL --> <!-- 검색 기능 -->
+	<select id = "getSearch2" parameterType = "spring.mvc.mybatis.ch03.dto.Search3" resultMap = "userMap">
+		select m.user_id, m.user_name, m.reg_date, p.post_title, p.post_content 
+		from member m join posts p
+		on m.user_id = p.user_id
+		where m.user_name = #{userName}
+		<choose>
+			<when test="post!=null and post.title != null">
+				and p.post_title like '%' || #{post.title} || '%'
+			</when>
+			<when test="post!=null and post.content != null">
+				and p.post_content like '%' || #{post.content} || '%'
+			</when>
+		</choose>
+	</select>
+	
+	<!-- 1. 동적 SQL --> <!-- 검색 기능 -->
+	<select id = "getSearch3" parameterType = "spring.mvc.mybatis.ch03.dto.Search3" resultMap = "userMap">
+		select m.user_id, m.user_name, m.reg_date, p.post_title, p.post_content 
+		from member m join posts p
+		on m.user_id = p.user_id
+		<where>
+			<if test="userName != null">
+			and m.user_name = #{userName}
+			</if>
+			<if test="post!=null and post.title != null">
+			and p.post_title like '%' || #{post.title} || '%'
+			</if>
+			<if test="post!=null and post.content != null">
+			and p.post_content like '%' || #{post.content} || '%'
+			</if>
+		</where>
+	</select>
+	
+	<update id = "updateUser" parameterType="spring.mvc.mybatis.ch03.dto.User3">
+		update member
+		<set>
+			<if test="userName != null">user_name = #{userName},</if>
+			<if test="regDate != null">reg_date = #{regDate},</if>
+		</set>
+		where user_id = #{userId}
+	</update>
+	
+	<select id = "getUserSearchInfo" parameterType="String" resultType="spring.mvc.mybatis.ch03.dto.User3">
+		select user_id userId, user_name userName, reg_date regDate from member 
+		<if test="_parameter != null and _parameter.equals('join')">
+		where user_name = #{userName}
+		</if>
+	</select>
+</mapper>

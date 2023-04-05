@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id = "sony" class = "com.spring.basic.ch04.SonySpeaker"/>
+	
+	<!-- 매개변수 생성자
+	public SamsungTV(SonySpeaker speaker, int price, String brand) {}
+	 -->
+	<bean id = "sstv4" class="com.spring.basic.ch04.SamsungTV">
+		<constructor-arg index="0" ref="sony"/><!-- 생성자 매개변수 -->
+		<constructor-arg index="1" value="2000000"/>
+		<constructor-arg index="2" value="SAMSUNG"/>
+	</bean>
+</beans>

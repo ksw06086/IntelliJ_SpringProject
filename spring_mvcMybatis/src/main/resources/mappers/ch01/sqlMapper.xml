@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--<resultMap type="spring.mvc.mybatis.ch01.vo.User" id="userMap">
+    <id property="userId" column = "user_id"/>
+    <result property="userName" column = "user_name"/>
+    <result property="regDate" column = "reg_date"/>
+    <association property="address" column="user_id" select="getAddress"/>
+</resultMap>
+
+        &lt;!&ndash; 1-3 &ndash;&gt;
+<select id = "getAddress" resultType = "spring.mvc.mybatis.ch01.vo.Address">
+select address from address where user_id = #{user_id}
+</select>
+
+        &lt;!&ndash; 1-1 &ndash;&gt;
+<select id = "getAddressInfo1" resultMap = "userMap">
+select user_id, user_name, reg_date from member
+</select>
+
+        &lt;!&ndash; 방법2. 내포된 결과 매핑을 사용한 일대일 매핑 - association - resultMap => join문 &ndash;&gt;
+        &lt;!&ndash; 2-2 &ndash;&gt;
+<resultMap type="spring.mvc.mybatis.ch01.vo.User" id="userMap2">
+<id property="userId" column = "user_id"/>
+<result property="userName" column = "user_name"/>
+<result property="regDate" column = "reg_date"/>
+<association property="address" resultMap="address"/>
+</resultMap>
+
+        &lt;!&ndash; 2-3 &ndash;&gt;
+<resultMap type="spring.mvc.mybatis.ch01.vo.Address" id="address">
+<result property="address" column = "address"/>
+</resultMap>-->
+
+<mapper namespace="Member">
+    <select id="addressInfo1" resultType="user1">
+        -- 일반적으로 값을 모두 가져오는 방식
+        select * from member
+    </select>
+</mapper>
