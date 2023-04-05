@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
-  <artifactId>board_framework</artifactId>
+  <artifactId>security_spring</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>board_framework Maven Webapp</name>
+  <name>security_spring Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,6 +15,7 @@
     <java-version>11</java-version>
     <org.springframework-version>5.3.20</org.springframework-version>
     <org.slf4j-version>1.7.25</org.slf4j-version>
+    <spring.security.version>5.2.5.RELEASE</spring.security.version>
   </properties>
 
   <dependencies>
@@ -142,6 +143,32 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- spring security -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+    <!-- //spring security -->
   </dependencies>
 
   <!-- 여기까지 복사 -->
