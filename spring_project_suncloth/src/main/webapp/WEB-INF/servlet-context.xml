@@ -12,6 +12,11 @@
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
     <resources mapping="/resources/**" location="/resources/"/>
 
+    <!-- 시큐리티 추가 1 -->
+    <!-- jsp 파일 설정할 때 이걸로 해줍니당~~~ -->
+    <!--<resources mapping="/include/**" location="/WEB-INF/views/include/" />-->
+    <!-- 시큐리티 추가 1 -->
+
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
     <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <beans:property name="prefix" value="/WEB-INF/views/" />

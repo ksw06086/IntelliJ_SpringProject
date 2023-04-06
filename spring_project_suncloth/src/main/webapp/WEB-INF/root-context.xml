@@ -8,18 +8,18 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!-- 데이터베이스 이름 및 계정 확인 -->
-    <!--<bean id="dataSource"
+    <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/db_sunwo?useSSL=false&amp;serverTimezone=Asia/Seoul" />
-        <property name="username" value="user_sunwo"/>
-        <property name="password" value="1234"/>
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+        <property name="username" value="scott"/>   <!-- db_codingrecipe : 어떤 DB를 쓸건지, mysql에서 생성하는 table 스페이스 -->
+        <property name="password" value="tiger"/>        <!-- mysql 계정이름 -->
     </bean>
 
-    &lt;!&ndash; 현재 프로젝트 패키지 경로 맞는지 확인 &ndash;&gt;
+    <!-- 현재 프로젝트 패키지 경로 맞는지 확인 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value ="classpath:/mybatis-config.xml" />
+        <!--<property name="configLocation" value ="classpath:/mybatis-config.xml" />-->
         <property name="mapperLocations" value="classpath:/mapper/*.xml" />
     </bean>
 
@@ -40,6 +40,6 @@
 
     </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>
