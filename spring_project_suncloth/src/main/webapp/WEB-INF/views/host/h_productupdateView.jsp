@@ -57,8 +57,8 @@ function sub_callback(){
 				<div id = "righttop">
 					<p><input type = "button" value = "상품리스트" id = "prdlist"></p>
 					<p><b>판매상품관리</b></p>
-					<p><input type = "submit" value = "파일들수정폼" id = "prdinput" onclick = "javascript: productForm.action = 'h_productform2.do'">
-					<input type = "submit" value = "텍스트등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_productupdatePro1.do'">
+					<p><input type = "submit" value = "파일들수정폼" id = "prdinput" onclick = "javascript: productForm.action = 'h_productform2'">
+					<input type = "submit" value = "텍스트등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_productupdatePro1'">
 					</p>
 				</div>
 				

@@ -12,7 +12,7 @@ function select_color(){
 	if(value != "") {
 	  var params = "color=" + color + "&num="+ value;
 		  
-	  sendRequest(sub_callback, "h_subsize", "GET", params); // search_next.jsp -> 콜백함수로 리턴
+	  sendRequest(sub_callback, "subsize", "GET", params); // search_next.jsp -> 콜백함수로 리턴
 	}
 }
 
@@ -130,11 +130,11 @@ function priceplus(val){
 			     <div id = "btnlist">
 			     	<table>
 			     		<tr>
-			     			<td colspan = "2"><input type = "submit" value = "BUY IT NOW" style = "width: 480px;" id = "buy" onclick = "javascript: productclick.action = 'orderform.do'"></td>
+			     			<td colspan = "2"><input type = "submit" value = "BUY IT NOW" style = "width: 480px;" id = "buy" onclick = "javascript: productclick.action = 'orderform'"></td>
 			     		</tr>
 			     		<tr>
-			     			<td><input type = "submit" value = "ADD TO CART" style = "width: 238px;" id = "cartadd" class = "btmbtn" onclick = "javascript: productclick.action = 'cartAdd.do'"></td>
-			     			<td><input type = "submit" value = "WISH LIST" style = "width: 238px;" id = "wishlist" class = "btmbtn" onclick = "javascript: productclick.action = 'wishlistAdd.do'"></td>
+			     			<td><input type = "submit" value = "ADD TO CART" style = "width: 238px;" id = "cartadd" class = "btmbtn" onclick = "javascript: productclick.action = 'cartAdd'"></td>
+			     			<td><input type = "submit" value = "WISH LIST" style = "width: 238px;" id = "wishlist" class = "btmbtn" onclick = "javascript: productclick.action = 'wishlistAdd'"></td>
 			     		</tr>
 			     	</table>
 			     </div>

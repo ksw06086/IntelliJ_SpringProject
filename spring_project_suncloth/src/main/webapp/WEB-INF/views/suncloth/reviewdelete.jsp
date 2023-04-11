@@ -13,9 +13,9 @@
 <script type = "text/javascript">
 	alert("삭제가 정상 처리되었습니다.");
 	if(${sessionScope.memCnt} == 0){
-		window.location = "review.do?choose=${choose}&pageNum=${pageNum}";
+		window.location = "review?choose=${choose}&pageNum=${pageNum}";
 	} else if(${sessionScope.memCnt} == 1){
-		window.location = "h_review.do?choose=${choose}&pageNum=${pageNum}";
+		window.location = "h_review?choose=${choose}&pageNum=${pageNum}";
 	}
 </script>
 </c:if>

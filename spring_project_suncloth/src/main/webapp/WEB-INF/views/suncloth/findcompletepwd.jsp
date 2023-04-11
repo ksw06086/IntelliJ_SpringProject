@@ -23,7 +23,7 @@ order<%@ page language="java" contentType="text/html; charset=UTF-8"
 		<p>비밀번호 찾기 완료</p>
 	</div>
 	
-    <form name = "findId" action="login.do" method = "post">
+    <form name = "findId" action="login" method = "post">
     	<fieldset>
     		<table id = "headtext">
     			<tr>

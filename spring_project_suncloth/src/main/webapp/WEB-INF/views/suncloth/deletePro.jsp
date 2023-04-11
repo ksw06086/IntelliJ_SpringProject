@@ -17,7 +17,7 @@
 		<!-- 1초 후에 alert창 띄운 후에 main으로 이동 -->
 		<script type = "text/javascript">
 			alert("탈퇴처리되었습니다.");
-			window.location = "main.do";
+			window.location = "main";
 		</script>
 	</c:if>
 </c:if>

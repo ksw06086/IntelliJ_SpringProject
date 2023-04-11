@@ -10,7 +10,7 @@
 		<p>home > login</p>
 	</div>
 	
-     <form name = "loginForm" action = "loginPro.do" method = "post"
+     <form name = "loginForm" action = "loginPro" method = "post"
      onsubmit = "return inputCheck();">
      	<input type = "hidden" name = "member" value = "0">
      	<fieldset>

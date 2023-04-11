@@ -48,7 +48,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	// email 메세지 보내기
-	public void emailsend(HttpServletRequest req, Model model) {
+	public void emailsend(HttpServletRequest req, Model model) throws Exception {
 		
 		
 		StringBuffer temp = new StringBuffer();
@@ -133,7 +133,7 @@ public class MemberServiceImpl implements MemberService{
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("member", member);
-		map.put("memberDTO", memberDTO);
+		map.put("vo", memberDTO);
 		
 		int cnt = memberRepository.insertMember(map);
 		
@@ -2094,7 +2094,7 @@ public class MemberServiceImpl implements MemberService{
 		// 인코딩 타입 : 한글 파일명이 열화되는 것을 방지함
 		String encType = "UTF-8";
 		try {
-			if(file.getOriginalFilename() != null) {
+			if(String.valueOf(file.getOriginalFilename()) != "") {
 				file.transferTo(new File(saveDir+file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
@@ -2111,7 +2111,8 @@ public class MemberServiceImpl implements MemberService{
 				dto.setFile1(file.getOriginalFilename());
 			}
 			file = req.getFile("file2");
-			if(file.getOriginalFilename() != null) {
+			if(String.valueOf(file.getOriginalFilename()) != "") {
+				System.out.println("file2 =" + String.valueOf(file.getOriginalFilename()));
 				file.transferTo(new File(saveDir+file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
@@ -2128,24 +2129,24 @@ public class MemberServiceImpl implements MemberService{
 				dto.setFile2(file.getOriginalFilename());
 			}
 			file = req.getFile("file3");
-			if(file.getOriginalFilename() != null) {
-				file.transferTo(new File(saveDir+file.getOriginalFilename()));
+			if (String.valueOf(file.getOriginalFilename()) != "") {
+				file.transferTo(new File(saveDir + file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
 				FileOutputStream fos = new FileOutputStream(realDir + file.getOriginalFilename());
-				
+
 				int data = 0;
-				
+
 				// 논리적인 경로에 저장된 임시 파일을 물리적인 경로로 복사함
-				while((data = fis.read()) != -1) {
-				fos.write(data);
+				while ((data = fis.read()) != -1) {
+					fos.write(data);
 				}
 				fis.close();
 				fos.close();
 				dto.setFile3(file.getOriginalFilename());
 			}
 			file = req.getFile("file4");
-			if(file.getOriginalFilename() != null) {
+			if(String.valueOf(file.getOriginalFilename()) != "") {
 				file.transferTo(new File(saveDir+file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
@@ -2162,7 +2163,7 @@ public class MemberServiceImpl implements MemberService{
 				dto.setFile4(file.getOriginalFilename());
 			}
 			file = req.getFile("file5");
-			if(file.getOriginalFilename() != null) {
+			if(String.valueOf(file.getOriginalFilename()) != "") {
 				file.transferTo(new File(saveDir+file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
@@ -2179,7 +2180,7 @@ public class MemberServiceImpl implements MemberService{
 				dto.setFile5(file.getOriginalFilename());
 			}
 			file = req.getFile("mainfile");
-			if(file.getOriginalFilename() != null) {
+			if(String.valueOf(file.getOriginalFilename()) != "") {
 				file.transferTo(new File(saveDir+file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
@@ -2221,9 +2222,10 @@ public class MemberServiceImpl implements MemberService{
 				dto.setDeliprice(0);
 			}
 			dto.setContent(req.getParameter("content"));
-			if(req.getParameter("withitem") != "") {
+			if(!req.getParameter("withitem").equals("")) {
 				dto.setWithprdnum(Integer.parseInt(req.getParameter("withitem")));
 			}
+			System.out.println(dto.toString());
 			
 			// 5단계. 글쓰기 처리
 			int insertCnt = memberRepository.insertproduct(dto);
@@ -2952,6 +2954,23 @@ public class MemberServiceImpl implements MemberService{
 			model.addAttribute("sizelist", sizelist); // 큰바구니 : 게시글 목록 cf) 작은 바구니 : 게시글 1건
 		}
 		model.addAttribute("sizesrhCnt", sizesrhCnt);
+	}
+
+	// submedium
+	public void submedium(HttpServletRequest req, Model model) {
+		int medisrhCnt = 0;
+		int num =  Integer.parseInt(req.getParameter("bigpart"));
+
+		// 5-1단계. 갯수 구하기
+		medisrhCnt = memberRepository.getSelectmediumpartCnt(num);
+		System.out.println("mediCnt = " + medisrhCnt);
+		if(medisrhCnt > 0) {
+			// 5-2단계. 목록 조회
+			List<mediumpartDTO> medilist = memberRepository.getmediumallList(num);
+			System.out.println("medilist = " + medilist.size());
+			model.addAttribute("medilist", medilist); // 큰바구니 : 게시글 목록 cf) 작은 바구니 : 게시글 1건
+		}
+		model.addAttribute("medisrhCnt", medisrhCnt);
 	}
 	
 	public void h_subcslist(HttpServletRequest req, Model medel) {
@@ -4609,6 +4628,7 @@ public class MemberServiceImpl implements MemberService{
 			map.put("name", "outer");
 			List<clothDTO> outerlist = memberRepository.getprdList(map);
 			medel.addAttribute("outerlist", outerlist); // 큰바구니 : 게시글 목록 cf) 작은 바구니 : 게시글 1건
+			System.out.println("outerlistSize = " + outerlist.size());
 			map.put("name", "top");
 			List<clothDTO> toplist = memberRepository.getprdList(map);
 			medel.addAttribute("toplist", toplist); // 큰바구니 : 게시글 목록 cf) 작은 바구니 : 게시글 1건
@@ -4629,6 +4649,7 @@ public class MemberServiceImpl implements MemberService{
 			medel.addAttribute("acclist", acclist); // 큰바구니 : 게시글 목록 cf) 작은 바구니 : 게시글 1건
 			List<clothDTO> list = memberRepository.productlist();
 			medel.addAttribute("list", list); // 큰바구니 : 게시글 목록 cf) 작은 바구니 : 게시글 1건
+			System.out.println("list" + list);
 		}
 		
 		// 6단계. request나 session에 처리 결과를 저장(jsp에 전달하기 위함)

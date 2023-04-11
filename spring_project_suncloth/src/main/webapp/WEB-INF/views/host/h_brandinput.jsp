@@ -6,7 +6,7 @@
 <body>
 <%@ include file = "topmenu.jsp" %>
 
-<form action = "h_brandPro.do" method = "post" name = "h_brandform">
+<form action = "h_brandPro" method = "post" name = "h_brandform">
 <section>
 	<table id = "middle">
 		<col style = "width:15%;">
@@ -15,7 +15,7 @@
 			<%@ include file = "h_boardLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "브랜드리스트" id = "brandlist" onclick = "window.location = 'h_brand.do'"></p>
+					<p><input type = "button" value = "브랜드리스트" id = "brandlist" onclick = "window.location = 'h_brand'"></p>
 					<p><b>브랜드관리</b></p>
 					<p><input type = "submit" value = "등록" id = "brandinput"></p>
 				</div>

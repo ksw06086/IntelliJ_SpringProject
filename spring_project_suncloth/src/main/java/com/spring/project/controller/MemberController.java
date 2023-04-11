@@ -1,13 +1,11 @@
 package com.spring.project.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import com.spring.project.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.spring.project.service.MemberServiceImpl;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
@@ -74,7 +73,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("emailsend")
-	public String emailsend(HttpServletRequest req, Model model) {
+	public String emailsend(HttpServletRequest req, Model model) throws Exception {
 		logger.info("url ==> emailsend");
 		service.emailsend(req, model);
 		
@@ -367,7 +366,7 @@ public class MemberController {
 	@RequestMapping("hostmain")
 	public String hostmain(HttpServletRequest req, Model model) {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		UserDetails userDetails = (UserDetails)principal; 
+		UserDetails userDetails = (UserDetails) principal;
 		String username = ((UserDetails) principal).getUsername();
 		String password = ((UserDetails) principal).getPassword();
 		req.getSession().setAttribute("memId", username);
@@ -561,10 +560,20 @@ public class MemberController {
 		
 		return "/host/h_product";
 	}
+
+	// 중간파트 분류명 가져오기
+	@RequestMapping("h_submedium")
+	public String h_submedium(HttpServletRequest req, Model model) {
+		logger.info("url ==> h_submedium");
+		service.submedium(req, model);
+
+		return "/host/h_submedium";
+	}
 	
 	@RequestMapping("h_productinput")
 	public String h_productinput(HttpServletRequest req, Model model) {
 		logger.info("url ==> h_productinput");
+		System.out.println("url => h_productinput");
 		service.productwriteForm(req, model);
 		
 		return "/host/h_productinput";
@@ -616,6 +625,14 @@ public class MemberController {
 		service.h_csupdateView(req, model);
 		
 		return "/host/h_csupdate";
+	}
+
+	@RequestMapping("subsize")
+	public String subsize(HttpServletRequest req, Model model) {
+		logger.info("url ==> subsize");
+		service.subsize(req, model);
+
+		return "/suncloth/subsize";
 	}
 	
 	@RequestMapping("h_subsize")

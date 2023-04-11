@@ -77,7 +77,7 @@ function changes(){
 			    			<td style = "border-right:1px solid #ccc;">메인 이미지1</td>
 			    			<td>
 			    			<input type = "file" id = "attachfile1" name = "mainfile">
-			    			<input type = "submit" value = "수정" name = "mainupdate" onclick = "javascript: productupdateForm.action = 'h_productmainfileupdatePro.do'">
+			    			<input type = "submit" value = "수정" name = "mainupdate" onclick = "javascript: productupdateForm.action = 'h_productmainfileupdatePro'">
 			    			</td>
 			    		</tr>
 						<tr class = "file">
@@ -101,7 +101,7 @@ function changes(){
 			    			<td><input type = "file" id = "attachfile5" name = "file5"></td>
 			    		</tr>
 			    		<tr class = "file">
-			    			<td colspan = "2"><input type = "submit" name = "fileupdate" value = "수정" onclick = "javascript: productupdateForm.action = 'h_productfilesupdatePro.do'"></td>
+			    			<td colspan = "2"><input type = "submit" name = "fileupdate" value = "수정" onclick = "javascript: productupdateForm.action = 'h_productfilesupdatePro'"></td>
 			    		</tr>
 			    		<tr id = "with">
 			    			<td style = "text-align:center; padding: 10px 0px;">
@@ -110,7 +110,7 @@ function changes(){
 			    			No image</div></td>
 			    			<td><input type = "button" id = "detailprd"
 			    			 onclick = "withproductChk();" name = "detailprdN" value = "상품정보선택" style = "vertical-align:middle; font-size: .9em;">
-			    			<input type = "submit" name = "withitemupdate" value = "수정" onclick = "javascript: productupdateForm.action = 'h_productwithitemsupdatePro.do'">
+			    			<input type = "submit" name = "withitemupdate" value = "수정" onclick = "javascript: productupdateForm.action = 'h_productwithitemsupdatePro'">
 			    			</td>
 			    		</tr>
 					</table>

@@ -27,8 +27,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -36,8 +36,8 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -45,8 +45,8 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -54,8 +54,8 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -74,8 +74,8 @@
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "menulist.do?name=${name}">[◀◀]</a>
-							<a href = "menulist.do?name=${name}&pageNum=${startPage - pageBlock}">[◀]</a>
+							<a href = "menulist?name=${name}">[◀◀]</a>
+							<a href = "menulist?name=${name}&pageNum=${startPage - pageBlock}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -84,14 +84,14 @@
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "menulist.do?name=${name}&pageNum=${i}">[${i}]</a></span>				
+								<span><a href = "menulist?name=${name}&pageNum=${i}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "menulist.do?name=${name}&pageNum=${startPage + pageBlock}">[▶]</a>
-							<a href = "menulist.do?name=${name}&pageNum=${pageCount}">[▶▶]</a>
+							<a href = "menulist?name=${name}&pageNum=${startPage + pageBlock}">[▶]</a>
+							<a href = "menulist?name=${name}&pageNum=${pageCount}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

@@ -419,7 +419,7 @@ function go(val){
 				</tr>
 				<tr>
 					<td colspan = "2" style = "padding:9px 6px;">
-					<input type = "submit" id = "pay" name = "payN" value = "결제하기" onclick = "javascript: orderform.action = 'orderPro.do'">
+					<input type = "submit" id = "pay" name = "payN" value = "결제하기" onclick = "javascript: orderform.action = 'orderPro'">
 					</td>
 				</tr>
 				<tr class = "lastbtm" id = "btm1">

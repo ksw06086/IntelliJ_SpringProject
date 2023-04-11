@@ -48,7 +48,7 @@ $(function() {
 				<div id = "righttop">
 					<p><b>회원관리</b></p>
 				</div>
-				<form action = "h_memberselect.do" method = "post" name = "searchForm">
+				<form action = "h_memberselect" method = "post" name = "searchForm">
 				<table id = "searchifs">
 					<col style = "width:15%;">
 					<col>
@@ -170,7 +170,7 @@ $(function() {
 									<td>개인</td>
 									<!-- 상세 페이지 -->
 									<td align = "left">
-									<a href = "h_memberForm.do?id=${list.id}&number=${number+1}&pageNum=${pageNum}">
+									<a href = "h_memberForm?id=${list.id}&number=${number+1}&pageNum=${pageNum}">
 									${list.name}
 									</a></td>
 									<td>${list.id}</td>
@@ -204,8 +204,8 @@ $(function() {
 											<c:if test="${cnt > 0}">
 												<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 												<c:if test="${startPage > pageBlock}">
-													<a href = "h_member.do">[◀◀]</a>
-													<a href = "h_member.do?pageNum=${startPage - pageBlock}">[◀]</a>
+													<a href = "h_member">[◀◀]</a>
+													<a href = "h_member?pageNum=${startPage - pageBlock}">[◀]</a>
 												</c:if>
 												
 												<!-- 블럭내의 페이지 번호 -->
@@ -214,14 +214,14 @@ $(function() {
 														<span><b>[${i}]</b></span>				
 													</c:if>
 													<c:if test="${i != currentPage}">
-														<span><a href = "h_member.do?pageNum=${i}">[${i}]</a></span>				
+														<span><a href = "h_member?pageNum=${i}">[${i}]</a></span>
 													</c:if>
 												</c:forEach>
 												
 												<!-- 다음블럭 [▶] / 끝[▶▶] -->
 												<c:if test="${pageCount > endPage}">
-													<a href = "h_member.do?pageNum=${startPage + pageBlock}">[▶]</a>
-													<a href = "h_member.do?pageNum=${pageCount}">[▶▶]</a>
+													<a href = "h_member?pageNum=${startPage + pageBlock}">[▶]</a>
+													<a href = "h_member?pageNum=${pageCount}">[▶▶]</a>
 												</c:if>
 											</c:if>
 										</th>

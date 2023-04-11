@@ -48,7 +48,7 @@ $(function() {
 				<div id = "righttop">
 					<p><b>[후기] 게시판 리스트</b></p>
 				</div>
-				<form action = "h_noticeselect.do" method = "post" name = "searchForm">
+				<form action = "h_noticeselect" method = "post" name = "searchForm">
 				<input type = "hidden" name = "choose" value = "1">
 				<table id = "searchifs">
 					<col style = "width:15%;">
@@ -97,7 +97,7 @@ $(function() {
 				</form>
 				
 				<div id = "result">
-				<form action = "reviewdelete.do" method = "post" name = "completeForm">
+				<form action = "reviewdelete" method = "post" name = "completeForm">
 					<input type = "hidden" name = "pageNum" value = "${pageNum}">
 					<table id = "resulttop">
 						<td>검색 
@@ -137,7 +137,7 @@ $(function() {
 									</td>
 									<!-- 상세 페이지 -->
 									<td align = "left">
-									<a href = "reviewForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
+									<a href = "reviewForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
 									${list.subject}
 									</a>
 									<c:set var="now" value="<%=new java.util.Date()%>" />
@@ -174,8 +174,8 @@ $(function() {
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "h_review.do?choose=${choose}">[◀◀]</a>
-							<a href = "h_review.do?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
+							<a href = "h_review?choose=${choose}">[◀◀]</a>
+							<a href = "h_review?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -184,14 +184,14 @@ $(function() {
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "h_review.do?pageNum=${i}&choose=${choose}">[${i}]</a></span>				
+								<span><a href = "h_review?pageNum=${i}&choose=${choose}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "h_review.do?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-							<a href = "h_review.do?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
+							<a href = "h_review?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
+							<a href = "h_review?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

@@ -10,7 +10,7 @@
 				<td><b>·회원</b></td>
 			</tr>
 			<tr>
-				<td>&emsp;<a href = "h_member.do">회원관리</a></td>
+				<td>&emsp;<a href = "h_member">회원관리</a></td>
 			</tr>
 		</table>
 	</div>

@@ -18,7 +18,7 @@ order<%@ page language="java" contentType="text/html; charset=UTF-8"
 		<p>아이디 찾기</p>
 	</div>
 	
-    <form name = "findform" action="findidcomplete.do" method = "post"
+    <form name = "findform" action="findidcomplete" method = "post"
     onsubmit = "return findidpwdCheck();">
     	<fieldset name = "typetbl">
     		<table id = "membertype" style = "margin: 40px auto 15px;">

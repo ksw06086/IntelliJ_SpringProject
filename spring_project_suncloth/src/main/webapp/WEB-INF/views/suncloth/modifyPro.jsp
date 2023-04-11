@@ -16,7 +16,7 @@
 <c:if test="${updateCnt != 0}">
 <script type = "text/javascript">
 	alert("수정이 정상 처리되었습니다.");
-	window.location = "main.do";
+	window.location = "main";
 </script>
 </c:if>
 </body>

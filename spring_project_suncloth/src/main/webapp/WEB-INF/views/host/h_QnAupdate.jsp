@@ -21,9 +21,9 @@
 			<%@ include file = "h_boardLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice.do?choose=${choose}'"></p>
+					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice?choose=${choose}'"></p>
 					<p><b>[FAQ] 게시글 수정</b></p>
-					<p><input type = "button" value = "삭제" id = "save" onclick = "window.location = 'QnAdeletePro.do?onenum=${num}&choose=${choose}&pageNum=${pageNum}'">
+					<p><input type = "button" value = "삭제" id = "save" onclick = "window.location = 'QnAdeletePro?onenum=${num}&choose=${choose}&pageNum=${pageNum}'">
 					<input type = "submit" value = "저장" id = "save"></p>
 				</div>
 				<div id = "product">

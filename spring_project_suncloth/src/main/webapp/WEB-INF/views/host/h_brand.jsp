@@ -33,10 +33,10 @@ $(function() {
 			<td id = "tabright">
 				<div id = "righttop">
 					<p><b>브랜드관리</b></p>
-					<p><a href = "h_brandinput.do"><input type = "button" value = "브랜드등록" id = "prdinput"></a></p>
+					<p><a href = "h_brandinput"><input type = "button" value = "브랜드등록" id = "prdinput"></a></p>
 				</div>
 				
-				<form action = "h_branddeletePro.do" method = "post" name = "completeForm">
+				<form action = "h_branddeletePro" method = "post" name = "completeForm">
 				<input type = "hidden" name = "pageNum" value = "${pageNum}">
 				<div id = "result">
 					<table id = "resulttop">
@@ -75,7 +75,7 @@ $(function() {
 									</td>
 									<!-- 상세 페이지 -->
 									<td align = "left">
-									<a href = "h_brandForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
+									<a href = "h_brandForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
 									${list.name}
 									</a></td>
 									<td>${list.hp}</td>
@@ -116,8 +116,8 @@ $(function() {
 											<c:if test="${cnt > 0}">
 												<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 												<c:if test="${startPage > pageBlock}">
-													<a href = "h_brand.do">[◀◀]</a>
-													<a href = "h_brand.do?pageNum=${startPage - pageBlock}">[◀]</a>
+													<a href = "h_brand">[◀◀]</a>
+													<a href = "h_brand?pageNum=${startPage - pageBlock}">[◀]</a>
 												</c:if>
 												
 												<!-- 블럭내의 페이지 번호 -->
@@ -126,14 +126,14 @@ $(function() {
 														<span><b>[${i}]</b></span>				
 													</c:if>
 													<c:if test="${i != currentPage}">
-														<span><a href = "h_brand.do?pageNum=${i}">[${i}]</a></span>				
+														<span><a href = "h_brand?pageNum=${i}">[${i}]</a></span>
 													</c:if>
 												</c:forEach>
 												
 												<!-- 다음블럭 [▶] / 끝[▶▶] -->
 												<c:if test="${pageCount > endPage}">
-													<a href = "h_brand.do?pageNum=${startPage + pageBlock}">[▶]</a>
-													<a href = "h_brand.do?pageNum=${pageCount}">[▶▶]</a>
+													<a href = "h_brand?pageNum=${startPage + pageBlock}">[▶]</a>
+													<a href = "h_brand?pageNum=${pageCount}">[▶▶]</a>
 												</c:if>
 											</c:if>
 										</th>

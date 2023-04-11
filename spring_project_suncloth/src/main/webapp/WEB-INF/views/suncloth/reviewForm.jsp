@@ -61,17 +61,17 @@
     	<input type = "button" id = "list" name = "back" value = "뒤로가기"  style = "font-size: .7em;"
     	onclick = "window.history.back();">
     	</c:if>
-    	<a href = "reivew.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "reivew?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;"></a>
     	<c:if test="${vo.writer == sessionScope.memId}">
-    	<a href = "reviewupdate.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "reviewupdate?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "update" value = "수정"  style = "font-size: .7em;"></a>
-    	<a href = "reviewdelete.do?onenum=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "reviewdelete?onenum=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "delete" value = "삭제"  style = "font-size: .7em;"></a>
     	</c:if>
     </div>
     
-    <form action="replyPro.do" method = "post" name = "replyForm">
+    <form action="replyPro" method = "post" name = "replyForm">
     	<input type = "hidden" name = "num" value = "${num}">
     	<input type = "hidden" name = "number" value = "${number}">
     	<input type = "hidden" name = "pageNum" value = "${pageNum}">
@@ -87,9 +87,9 @@
 					<c:if test="${srhCnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "reviewForm.do?num=${num}&number=${number}
+							<a href = "reviewForm?num=${num}&number=${number}
 							&pageNum=${pageNum}&choose=${choose}">[◀◀]</a>
-							<a href = "reviewForm.do?num=${num}&number=${number}
+							<a href = "reviewForm?num=${num}&number=${number}
 							&pageNum=${pageNum}&r_pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 						</c:if>
 						
@@ -99,16 +99,16 @@
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "reviewForm.do?num=${num}&number=${number}
+								<span><a href = "reviewForm?num=${num}&number=${number}
 							&pageNum=${pageNum}&r_pageNum=${i}&choose=${choose}">[${i}]</a></span>				
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "reviewForm.do?num=${num}&number=${number}
+							<a href = "reviewForm?num=${num}&number=${number}
 							&pageNum=${pageNum}&r_pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-							<a href = "reviewForm.do?num=${num}&number=${number}
+							<a href = "reviewForm?num=${num}&number=${number}
 							&pageNum=${pageNum}&r_pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 						</c:if>
 					</c:if>
@@ -135,7 +135,7 @@
 						</td>
 						<c:if test="${list.writer == sessionScope.memId}">
 						<td style = "text-align: center;"><input type = "button" id = "ok" name = "okN" value = "삭제" 
-						onclick = "window.location = 'replydelete.do?num=${num}&number=${number}&pageNum=${pageNum}&rpageNum=${rpageNum}&choose=${choose}&onenum=${list.num}'"></td></c:if>
+						onclick = "window.location = 'replydelete?num=${num}&number=${number}&pageNum=${pageNum}&rpageNum=${rpageNum}&choose=${choose}&onenum=${list.num}'"></td></c:if>
 						<c:if test="${list.writer != sessionScope.memId}">
 						<td></td>
 						</c:if>
@@ -181,13 +181,13 @@
     		<c:if test="${vo.fwsubject != null}">
 	    		<tr id = "before">
 	    			<td><img src = "ascloimage/up.png" width = "12px" height = "12px">이전글</td>
-	    			<td><a href = "reviewForm.do?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}">${vo.fwsubject}</a></td>
+	    			<td><a href = "reviewForm?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}">${vo.fwsubject}</a></td>
 	    		</tr>
     		</c:if>
     		<c:if test="${vo.nextsubject != null}">
 	    		<tr id = "after">
 	    			<td><img src = "ascloimage/down.png" width = "12px" height = "12px">다음글</td>
-	    			<td><a href = "reviewForm.do?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">${vo.nextsubject}</a></td>
+	    			<td><a href = "reviewForm?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">${vo.nextsubject}</a></td>
 	    		</tr>
     		</c:if>
     	</table>

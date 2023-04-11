@@ -23,7 +23,7 @@ order<%@ page language="java" contentType="text/html; charset=UTF-8"
 		<p><b>고객님 아이디 찾기가 완료되었습니다.</b></p>
 	</div>
 	
-    <form name = "findId" action="login.do" method = "post">
+    <form name = "findId" action="login" method = "post">
     	<fieldset>
     		<table id = "headtext">
     			<tr>
@@ -85,7 +85,7 @@ order<%@ page language="java" contentType="text/html; charset=UTF-8"
    		<table id = "btn" style = "margin: 0px auto 40px;">	
    			<tr>
    				<td><input type = "submit" id = "findbtn" value = "로그인" name = "findbtnN"></td>
-   				<td><input type = "button" id = "findpwd" value = "비밀번호 찾기" name = "findpwdN" onclick = "window.location = 'findpwd.do'"></td>
+   				<td><input type = "button" id = "findpwd" value = "비밀번호 찾기" name = "findpwdN" onclick = "window.location = 'findpwd'"></td>
    			</tr>
    		</table>
     </form>

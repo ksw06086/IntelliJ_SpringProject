@@ -78,7 +78,7 @@ $(function() {
 						</td>
 						<c:if test="${list.state == '문의글'}">
 							<td align = "left">
-							<a href = "QnAForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=3&textType=${list.texttype}">
+							<a href = "QnAForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=3&textType=${list.texttype}">
 							${list.subject}(${list.writestate})
 							</a>
 							<c:if test="${list.texttype == 'close'}">
@@ -91,7 +91,7 @@ $(function() {
 						</c:if>
 						<c:if test="${list.state == '후기글'}">
 							<td align = "left">
-							<a href = "reviewForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=4">
+							<a href = "reviewForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=4">
 							${list.subject}
 							</a> 
 							<c:if test = "${boardYear == sysYear}">
@@ -135,8 +135,8 @@ $(function() {
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "my_board.do">[◀◀]</a>
-							<a href = "my_board.do?pageNum=${startPage - pageBlock}">[◀]</a>
+							<a href = "my_board">[◀◀]</a>
+							<a href = "my_board?pageNum=${startPage - pageBlock}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -145,14 +145,14 @@ $(function() {
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "my_board.do?pageNum=${i}">[${i}]</a></span>				
+								<span><a href = "my_board?pageNum=${i}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "my_board.do?pageNum=${startPage + pageBlock}">[▶]</a>
-							<a href = "my_board.do?pageNum=${pageCount}">[▶▶]</a>
+							<a href = "my_board?pageNum=${startPage + pageBlock}">[▶]</a>
+							<a href = "my_board?pageNum=${pageCount}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

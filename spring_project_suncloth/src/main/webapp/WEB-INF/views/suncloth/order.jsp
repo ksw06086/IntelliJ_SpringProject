@@ -117,7 +117,7 @@ ${srhCnt}/${cnt}
 					</c:if>
 					</td>
 		    		<td style = "text-align:left;">
-					<a href = "h_productForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}">
+					<a href = "h_productForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}">
 					<b>${list.prdname}</b><br>
 		    		<span style = "color: #282828;">[옵션: ${list.colorname}/${list.sizename}]</span>
 		    		</a>
@@ -129,12 +129,12 @@ ${srhCnt}/${cnt}
 		    		<td style = "border-left: 1px solid rgba(204, 204, 204,0.5);">
 		    		<c:if test="${list.state != '입금전' and list.state != '주문취소' and list.state != '환불신청' and list.state != '환불완료'}">
 		    		<input type = "button" value = "반품하기" id = "del" style = "width:80px;"
-		    		onclick = "window.location = 'order.do?num=${list.num}&statenumber=2'">
+		    		onclick = "window.location = 'order?num=${list.num}&statenumber=2'">
 		    		<c:set var="ncount" value = "${ncount + list.price}"/>
 		    		</c:if>
 		    		<c:if test="${list.state == '입금전'}">
 		    		<input type = "button" value = "취소하기" id = "order" style = "width:80px;" 
-		    		onclick = "window.location = 'order.do?num=${list.num}&statenumber=1&count=${list.count}'">
+		    		onclick = "window.location = 'order?num=${list.num}&statenumber=1&count=${list.count}'">
 		    		</c:if>
 		    		<c:if test="${list.state == '주문취소' or list.state == '환불신청' or list.state == '환불완료'}">
 		    		-
@@ -159,7 +159,7 @@ ${srhCnt}/${cnt}
     </table>
      
     <div style = "width:100%; text-align:right; margin:20px 0px;">
-	    <input type = "button" value = "쇼핑계속하기" id = "goshopping" onclick = "window.location = 'main.do'">
+	    <input type = "button" value = "쇼핑계속하기" id = "goshopping" onclick = "window.location = 'main'">
     </div>
      
  </form>  
@@ -172,8 +172,8 @@ ${srhCnt}/${cnt}
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "order.do">[◀◀]</a>
-							<a href = "order.do?pageNum=${startPage - pageBlock}">[◀]</a>
+							<a href = "order">[◀◀]</a>
+							<a href = "order?pageNum=${startPage - pageBlock}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -182,14 +182,14 @@ ${srhCnt}/${cnt}
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "order.do?pageNum=${i}">[${i}]</a></span>				
+								<span><a href = "order?pageNum=${i}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "order.do?pageNum=${startPage + pageBlock}">[▶]</a>
-							<a href = "order.do?pageNum=${pageCount}">[▶▶]</a>
+							<a href = "order?pageNum=${startPage + pageBlock}">[▶]</a>
+							<a href = "order?pageNum=${pageCount}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

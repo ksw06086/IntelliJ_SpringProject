@@ -58,18 +58,18 @@
 </header>
 
 <nav>
-	<div class="lnb" style = "background-color:rgb(191,57,46);">
+	<div class="lnb">
         <ul>
-            <li><a href="menulist?name=only asclo" alt="" style = "color:#fff;">only asclo</a></li>
-            <li><a href="menulist?name=best" alt="" style = "color:#fff;">best</a></li>
-            <li><a href="menulist?name=outer" alt="" style = "color:#fff;">outer</a></li>
-            <li><a href="menulist?name=suit" alt="" style = "color:#fff;">suit</a></li>
-            <li><a href="menulist?name=top" alt="" style = "color:#fff;">top</a></li>
-            <li><a href="menulist?name=shirt" alt="" style = "color:#fff;">shirt</a></li>
-            <li><a href="menulist?name=knit" alt="" style = "color:#fff;">knit</a></li>
-            <li><a href="menulist?name=bottom" alt="" style = "color:#fff;">bottom</a></li>
-            <li><a href="menulist?name=shoes" alt="" style = "color:#fff;">shoes</a></li>
-            <li><a href="menulist?name=acc" alt="" style = "color:#fff;">acc</a></li>
+            <li><a href="menulist?name=only asclo" alt="">only asclo</a></li>
+            <li><a href="menulist?name=best" alt="">best</a></li>
+            <li><a href="menulist?name=outer" alt="">outer</a></li>
+            <li><a href="menulist?name=suit" alt="">suit</a></li>
+            <li><a href="menulist?name=top" alt="">top</a></li>
+            <li><a href="menulist?name=shirt" alt="">shirt</a></li>
+            <li><a href="menulist?name=knit" alt="">knit</a></li>
+            <li><a href="menulist?name=bottom" alt="">bottom</a></li>
+            <li><a href="menulist?name=shoes" alt="">shoes</a></li>
+            <li><a href="menulist?name=acc" alt="">acc</a></li>
         </ul>
      </div>
     </nav>

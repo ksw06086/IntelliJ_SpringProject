@@ -30,25 +30,25 @@
 				    	</tr>
 				    	<tr class = "borad">
 				    		<td>4</td>
-				    		<td><a href = "h_notice.do?choose=1">notice</a></td>
+				    		<td><a href = "h_notice?choose=1">notice</a></td>
 				    		<td>공지</td>
 				    		<td>0/0</td>
 				    	</tr>
 				    	<tr class = "borad">
 				    		<td>3</td>
-				    		<td><a href = "h_FAQ.do?choose=2">FAQ</a></td>
+				    		<td><a href = "h_FAQ?choose=2">FAQ</a></td>
 				    		<td>FAQ</td>
 				    		<td>0/0</td>
 				    	</tr>
 				    	<tr class = "borad">
 				    		<td>2</td>
-				    		<td><a href = "h_QnA.do?choose=3">Q&A</a></td>
+				    		<td><a href = "h_QnA?choose=3">Q&A</a></td>
 				    		<td>문의</td>
 				    		<td>0/0</td>
 				    	</tr>
 				    	<tr class = "borad">
 				    		<td>1</td>
-				    		<td><a href = "h_review.do?choose=4">review</a></td>
+				    		<td><a href = "h_review?choose=4">review</a></td>
 				    		<td>후기</td>
 				    		<td>0/0</td>
 				    	</tr>

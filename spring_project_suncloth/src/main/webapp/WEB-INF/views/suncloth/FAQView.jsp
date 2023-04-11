@@ -36,7 +36,7 @@
     
     
     <div id = "golist" style = "margin: 10px 0px 50px; text-align: right;">
-    	<a href = "FAQ.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "FAQ?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;"></a>
     </div>
     
@@ -47,13 +47,13 @@
     		<c:if test="${vo.fwsubject != null}">
 	    		<tr id = "before">
 	    			<td><img src = "ascloimage/up.png" width = "12px" height = "12px">이전글</td>
-	    			<td><a href = "FAQForm.do?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}">${vo.fwsubject}</a></td>
+	    			<td><a href = "FAQForm?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}">${vo.fwsubject}</a></td>
 	    		</tr>
     		</c:if>
     		<c:if test="${vo.nextsubject != null}">
 	    		<tr id = "after">
 	    			<td><img src = "ascloimage/down.png" width = "12px" height = "12px">다음글</td>
-	    			<td><a href = "FAQForm.do?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">${vo.nextsubject}</a></td>
+	    			<td><a href = "FAQForm?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">${vo.nextsubject}</a></td>
 	    		</tr>
     		</c:if>
     	</table>

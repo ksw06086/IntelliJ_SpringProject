@@ -60,11 +60,11 @@
 			<col style = "width: 17.5%">
 			
 			<tr>
-				<td><a href = "order.do"><b>ORDER</b><br>주문내역 조회</a></td>
-				<td><a href = "modifyView.do"><b>PROFLE</b><br>회원 정보</a></td>
-				<td><a href = "wishlist.do"><b>WISH LIST</b><br>관심 상품</a></td>
-				<td><a href = "mileage.do"><b>MILEAGE</b><br>적립금 관리</a></td>
-				<td><a href = "my_board.do"><b>BOARD</b><br>내 게시물 관리</a></td>
+				<td><a href = "order"><b>ORDER</b><br>주문내역 조회</a></td>
+				<td><a href = "modifyView"><b>PROFLE</b><br>회원 정보</a></td>
+				<td><a href = "wishlist"><b>WISH LIST</b><br>관심 상품</a></td>
+				<td><a href = "mileage"><b>MILEAGE</b><br>적립금 관리</a></td>
+				<td><a href = "my_board"><b>BOARD</b><br>내 게시물 관리</a></td>
 			</tr>
 		</table>
 	</div>

@@ -90,10 +90,10 @@ function sub_callback1(){
 			<td id = "tabright">
 			<form method="post" name = "productForm" enctype="multipart/form-data">
 				<div id = "righttop">
-					<p><input type = "button" value = "상품리스트" id = "prdlist"></p>
+					<p><input type = "button" value = "상품리스트" id = "prdlist" onclick = "window.location.href = 'h_product'"></p>
 					<p><b>판매상품관리</b></p>
 					<p>
-					<input type = "submit" value = "등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_productPro.do'">
+					<input type = "submit" value = "등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_productPro'">
 					</p>
 				</div>
 				

@@ -45,7 +45,7 @@ public class UserAuthenticationService implements UserDetailsService{
 		// id와 패스워드가 불일치시 null이 넘어오고, 일치시 계정이 넘어온다.
 		// 비밀번호 체크로직은 스프링 시큐리티안에 숨어있다.
 		// 스프링 시큐리티에서 체크하는 필드로 별칭을 줌, 테이블의 암호화된 비밀번호와 사용자가 입력한 비밀번호를 내부로직으로 비교처리된다.
-		Map<String, Object> user = sqlSession.selectOne("com.spring.project.persistence.MemberRepository.selectUser",id);
+		Map<String, Object> user = sqlSession.selectOne("com.spring.project.repository.MemberRepository.selectUser",id);
 		System.out.println("로그인 체크 ==> " + user);
 		
 		// 인증실패시 인위적으로 예외를 발생시키겠다.

@@ -29,7 +29,7 @@
 				<input type = "hidden" name = "searchType" value = "0">
 				</td>
 				<td><input type = "search" id = "searchtext" name = "srch" value = "${searchtext}" style = "width: 100%; height: 40px; border:none;"></td>
-				<td><a onclick = "javascript: search.action = 'searchlist.do'"><img src = "./ascloimage/search.png" width = "25px" height = "25px" style = "vertical-align:middle;"></a></td>
+				<td><a onclick = "javascript: search.action = 'searchlist'"><img src = "./ascloimage/search.png" width = "25px" height = "25px" style = "vertical-align:middle;"></a></td>
 			</tr>
 		</table>
 	</div>
@@ -52,8 +52,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -61,8 +61,8 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -70,8 +70,8 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -79,8 +79,8 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -97,8 +97,8 @@
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "searchlist.do?srch=${searchtext}">[◀◀]</a>
-							<a href = "searchlist.do?pageNum=${startPage - pageBlock}&srch=${searchtext}">[◀]</a>
+							<a href = "searchlist?srch=${searchtext}">[◀◀]</a>
+							<a href = "searchlist?pageNum=${startPage - pageBlock}&srch=${searchtext}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -107,14 +107,14 @@
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "searchlist.do?pageNum=${i}&srch=${searchtext}">[${i}]</a></span>				
+								<span><a href = "searchlist?pageNum=${i}&srch=${searchtext}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "searchlist.do?pageNum=${startPage + pageBlock}&srch=${searchtext}">[▶]</a>
-							<a href = "searchlist.do?pageNum=${pageCount}&srch=${searchtext}">[▶▶]</a>
+							<a href = "searchlist?pageNum=${startPage + pageBlock}&srch=${searchtext}">[▶]</a>
+							<a href = "searchlist?pageNum=${pageCount}&srch=${searchtext}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

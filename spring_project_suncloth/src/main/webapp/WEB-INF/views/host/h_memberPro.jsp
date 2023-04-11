@@ -16,7 +16,7 @@
 <c:if test="${ucnt != 0}">
 <script type = "text/javascript">
 	alert("수정이 정상 처리되었습니다.");
-	window.location = "h_member.do?pageNum=${pageNum}";
+	window.location = "h_member?pageNum=${pageNum}";
 </script>
 </c:if>
 </body>

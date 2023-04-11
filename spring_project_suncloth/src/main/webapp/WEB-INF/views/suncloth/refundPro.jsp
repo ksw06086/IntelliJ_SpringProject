@@ -10,8 +10,8 @@
 </script>
 </c:if>
 <c:if test="${insertCnt != 0}">
-	<!-- cnt를 가지고 mainSuccess.do로 이동 -->
-	<%-- response.sendRedirect("mainSuccess.do?cnt=" + cnt); --%>
+	<!-- cnt를 가지고 mainSuccess로 이동 -->
+	<%-- response.sendRedirect("mainSuccess?cnt=" + cnt); --%>
 	<script type="text/javascript">
 		opener.document.modifyView.bank.value = "${bank}";
 		opener.document.modifyView.acc.value = "${acc}";

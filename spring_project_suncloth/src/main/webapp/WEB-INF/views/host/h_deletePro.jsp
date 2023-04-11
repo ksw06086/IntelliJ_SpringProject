@@ -17,7 +17,7 @@
 		<!-- 1초 후에 alert창 띄운 후에 main으로 이동 -->
 		<script type = "text/javascript">
 			alert("탈퇴처리되었습니다.");
-			window.location = "h_member.do?pageNum=${pageNum}";
+			window.location = "h_member?pageNum=${pageNum}";
 		</script>
 	</c:if>
 </c:if>

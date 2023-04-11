@@ -48,7 +48,7 @@ $(function() {
 				<div id = "righttop">
 					<p><b>[Q&A] 게시판 리스트</b></p>
 				</div>
-				<form action = "QnAselect.do" method = "post" name = "searchForm">
+				<form action = "QnAselect" method = "post" name = "searchForm">
 					<input type = "hidden" name = "choose" value = "3">
 					<table id = "searchifs">
 						<col style = "width:15%;">
@@ -114,7 +114,7 @@ $(function() {
 				</form>
 				
 				<div id = "result">
-				<form action = "h_noticedeletePro.do" method = "post" name = "completeForm">
+				<form action = "h_noticedeletePro" method = "post" name = "completeForm">
 					<input type = "hidden" name = "pageNum" value = "${pageNum}">
 					<table id = "resulttop">
 						<td>검색 
@@ -159,10 +159,10 @@ $(function() {
 									<td>${list.state}</td>
 									<td align = "left">
 									<c:if test="${list.writer != sessionScope.memId}">
-									<a href = "QnAForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
+									<a href = "QnAForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
 									</c:if>
 									<c:if test="${list.writer == sessionScope.memId}">
-									<a href = "h_QnAupdate.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&ref=${list.ref}">
+									<a href = "h_QnAupdate?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&ref=${list.ref}">
 									</c:if>
 									<c:if test="${list.ref_level > 0}">
 										&nbsp;<img src = "ascloimage/re.png" border = "0" width = "20" height = "15">
@@ -202,8 +202,8 @@ $(function() {
 											<c:if test="${cnt > 0}">
 												<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 												<c:if test="${startPage > pageBlock}">
-													<a href = "h_QnA.do?choose=${choose}">[◀◀]</a>
-													<a href = "h_QnA.do?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
+													<a href = "h_QnA?choose=${choose}">[◀◀]</a>
+													<a href = "h_QnA?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 												</c:if>
 												
 												<!-- 블럭내의 페이지 번호 -->
@@ -212,14 +212,14 @@ $(function() {
 														<span><b>[${i}]</b></span>				
 													</c:if>
 													<c:if test="${i != currentPage}">
-														<span><a href = "h_QnA.do?pageNum=${i}&choose=${choose}">[${i}]</a></span>				
+														<span><a href = "h_QnA?pageNum=${i}&choose=${choose}">[${i}]</a></span>
 													</c:if>
 												</c:forEach>
 												
 												<!-- 다음블럭 [▶] / 끝[▶▶] -->
 												<c:if test="${pageCount > endPage}">
-													<a href = "h_QnA.do?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-													<a href = "h_QnA.do?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
+													<a href = "h_QnA?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
+													<a href = "h_QnA?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 												</c:if>
 											</c:if>
 										</th>

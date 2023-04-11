@@ -8,7 +8,7 @@
 	<b>환불계좌 변경</b>
 </header>
 
-    <form name = "refundForm" action = "refundPro.do" method = "post" id = "accountChange"
+    <form name = "refundForm" action = "refundPro" method = "post" id = "accountChange"
     onsubmit = "return refundCheck();">
 	    
 	    <table>

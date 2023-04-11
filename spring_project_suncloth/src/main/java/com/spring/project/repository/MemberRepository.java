@@ -302,7 +302,7 @@ public interface MemberRepository {
 	public List<orderDTO> getcartList(Map<String, Object> map);
 
 	// 이메일 보내기
-	public void sendmail(String email, String key);
+	public void sendmail(String email, String key) throws Exception;
 
 	// 주문시에 장바구니도 삭제
 	public int deletecart(int parseInt);
@@ -483,8 +483,4 @@ public interface MemberRepository {
 	int h_plusminus(Map<String, Object> map);
 
 
-	
-
-
-	
 }

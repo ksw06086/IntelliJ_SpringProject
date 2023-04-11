@@ -10,9 +10,9 @@ function ordergo(num, gid, prdnum, state){
 	var inin = confirm(state + "로 변경하시겠습니까?");
 	
 	if(inin){
-		window.location = 'h_order.do?ordernum=' + num + '&orderstate=' + state + '&gid=' + gid + '&prdnum=' + prdnum;
+		window.location = 'h_order?ordernum=' + num + '&orderstate=' + state + '&gid=' + gid + '&prdnum=' + prdnum;
 	} else {
-		window.location = 'h_order.do';
+		window.location = 'h_order';
 	}
 }
 </script>
@@ -189,8 +189,8 @@ function ordergo(num, gid, prdnum, state){
 								<c:if test="${cnt > 0}">
 									<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 									<c:if test="${startPage > pageBlock}">
-										<a href = "h_order.do?choose=${choose}">[◀◀]</a>
-										<a href = "h_order.do?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
+										<a href = "h_order?choose=${choose}">[◀◀]</a>
+										<a href = "h_order?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 									</c:if>
 									
 									<!-- 블럭내의 페이지 번호 -->
@@ -199,14 +199,14 @@ function ordergo(num, gid, prdnum, state){
 											<span><b>[${i}]</b></span>				
 										</c:if>
 										<c:if test="${i != currentPage}">
-											<span><a href = "h_order.do?pageNum=${i}&choose=${choose}">[${i}]</a></span>				
+											<span><a href = "h_order?pageNum=${i}&choose=${choose}">[${i}]</a></span>
 										</c:if>
 									</c:forEach>
 									
 									<!-- 다음블럭 [▶] / 끝[▶▶] -->
 									<c:if test="${pageCount > endPage}">
-										<a href = "h_order.do?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-										<a href = "h_order.do?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
+										<a href = "h_order?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
+										<a href = "h_order?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 									</c:if>
 								</c:if>
 							</th>

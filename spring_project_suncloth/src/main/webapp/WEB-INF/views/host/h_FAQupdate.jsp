@@ -12,7 +12,7 @@ $(function() {
 <%@ include file = "topmenu.jsp" %>
 
 <section>
-<form action = "h_FAQUpdatePro.do" method = "post" name = "h_FAQform">
+<form action = "h_FAQUpdatePro" method = "post" name = "h_FAQform">
 	<input type = "hidden" name = "choose" value = "${choose}">
 	<input type = "hidden" name = "num" value = "${num}">
 	<input type = "hidden" name = "pageNum" value = "${pageNum}">
@@ -23,9 +23,9 @@ $(function() {
 			<%@ include file = "h_boardLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice.do?pageNum=${pageNum}&choose=${choose}'"></p>
+					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice?pageNum=${pageNum}&choose=${choose}'"></p>
 					<p><b>[FAQ] 게시글 등록</b></p>
-					<p><input type = "button" value = "삭제" id = "save" onclick = "window.location = 'h_FAQdeletePro.do?onenum=${num}&choose=${choose}&pageNum=${pageNum}'">
+					<p><input type = "button" value = "삭제" id = "save" onclick = "window.location = 'h_FAQdeletePro?onenum=${num}&choose=${choose}&pageNum=${pageNum}'">
 					<input type = "submit" value = "저장" id = "save"></p>
 				</div>
 				

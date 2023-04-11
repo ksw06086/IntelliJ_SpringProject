@@ -7,7 +7,7 @@
 <%@ include file = "topmenu.jsp" %>
 
 <section>
-<form action = "h_noticeUpdatePro.do" method = "post" name = "h_noticeform">
+<form action = "h_noticeUpdatePro" method = "post" name = "h_noticeform">
 	<input type = "hidden" name = "choose" value = "${choose}">
 	<input type = "hidden" name = "num" value = "${num}">
 	<input type = "hidden" name = "pageNum" value = "${pageNum}">
@@ -18,9 +18,9 @@
 			<%@ include file = "h_boardLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice.do?pageNum=${pageNum}&choose=${choose}'"></p>
+					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice?pageNum=${pageNum}&choose=${choose}'"></p>
 					<p><b>[공지] 게시글 수정</b></p>
-					<p><input type = "button" value = "삭제" id = "save" onclick = "window.location = 'h_noticedeletePro.do?onenum=${num}&choose=${choose}&pageNum=${pageNum}'">
+					<p><input type = "button" value = "삭제" id = "save" onclick = "window.location = 'h_noticedeletePro?onenum=${num}&choose=${choose}&pageNum=${pageNum}'">
 					<input type = "submit" value = "저장" id = "save"></p>
 				</div>
 				

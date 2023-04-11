@@ -31,19 +31,19 @@ $(function() {
     <div id = "likehtml">
     	<table>
     		<tr>
-    			<td><a href = "notice.do?choose=1">
+    			<td><a href = "notice?choose=1">
     				<img src = "./ascloimage/notice.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				공지사항
     				</a>
     			</td>
     			
-    			<td><a href = "QnA.do?choose=2">
+    			<td><a href = "QnA?choose=2">
     				<img src = "./ascloimage/qna.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				상품문의
     				</a>
     			</td>
     			
-    			<td><a href = "review.do?choose=4">
+    			<td><a href = "review?choose=4">
     				<img src = "./ascloimage/review.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				사용후기
     				</a>
@@ -86,7 +86,7 @@ $(function() {
 						</c:if>
 						</td>
 						<td align = "left">
-						<a href = "reviewForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
+						<a href = "reviewForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
 						${list.subject}
 						</a>
 						<c:set var="now" value="<%=new java.util.Date()%>" />
@@ -141,8 +141,8 @@ $(function() {
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "review.do?choose=${choose}">[◀◀]</a>
-							<a href = "review.do?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
+							<a href = "review?choose=${choose}">[◀◀]</a>
+							<a href = "review?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -151,14 +151,14 @@ $(function() {
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "review.do?pageNum=${i}&choose=${choose}">[${i}]</a></span>				
+								<span><a href = "review?pageNum=${i}&choose=${choose}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "review.do?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-							<a href = "review.do?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
+							<a href = "review?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
+							<a href = "review?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

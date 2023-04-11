@@ -26,7 +26,7 @@
     	</table>
     </div>
 	
-     <form name = "qnadoor" action = "QnAForm.do" method = "post"
+     <form name = "qnadoor" action = "QnAForm" method = "post"
      onsubmit = "return inputCheck();">
      	<input type = "hidden" name = "num" value = "${num}">
      	<input type = "hidden" name = "number" value = "${number}">
@@ -55,7 +55,7 @@
      			</tr>
      			
      			<tr>
-     				<td colspan = "2"><a href = "QnA.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+     				<td colspan = "2"><a href = "QnA?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     				<input type = "button" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;"></a>
      				<input type = "submit" id = "ok" value = "확인"></td>
      			</tr>

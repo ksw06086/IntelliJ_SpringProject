@@ -98,7 +98,7 @@ function sub_callback(){
 					<p><input type = "button" value = "상품리스트" id = "prdlist"></p>
 					<p><b>color/size 재고 상품 등록</b></p>
 					<p>
-					<input type = "submit" value = "등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_csupdatePro.do'">
+					<input type = "submit" value = "등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_csupdatePro'">
 					</p>
 				</div>
 				

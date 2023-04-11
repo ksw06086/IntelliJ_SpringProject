@@ -17,7 +17,7 @@
 						<li>tel.032-1234-5678 email.k-sunwo@naver.com</li>
 						<li>business no.204-29-34817</li>
 						<li>mail order license.2019-서울동대문-0071호[사업자정보확인]</li>
-						<li><a href = "findroad.do" style = "text-decoration:underline;">address.[02586] 서울특별시 성동구 청계천로 468 3층</a></li>
+						<li><a href = "findroad" style = "text-decoration:underline;">address.[02586] 서울특별시 성동구 청계천로 468 3층</a></li>
 						<br>
 						<li><b>[교환/반품 주소지]</b></li>
 						<li>서울특별시 동대문구 난계로30길 23 (신설동) 7층</li>

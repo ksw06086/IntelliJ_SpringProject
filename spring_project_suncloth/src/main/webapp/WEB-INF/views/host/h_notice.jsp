@@ -47,7 +47,7 @@ $(function() {
 			<td id = "tabright">
 				<div id = "righttop">
 					<p><b>[공지] 게시판 리스트</b></p>
-					<p><a href = "h_noticewrite.do?choose=${choose}"><input type = "button" value = "게시글 등록" id = "faqinput"></a></p>
+					<p><a href = "h_noticewrite?choose=${choose}"><input type = "button" value = "게시글 등록" id = "faqinput"></a></p>
 				</div>
 				<form action = "h_noticeselect." method = "post" name = "searchForm">
 					<input type = "hidden" name = "choose" value = "1">

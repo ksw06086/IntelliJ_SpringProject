@@ -5,9 +5,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="sec" uri = "http://www.springframework.org/security/tags" %>
 
-<c:set var = "project" value = "/project/resources/"/>
+<c:set var = "project" value = "/resources/"/>
 
-<link type = "text/css" rel = "stylesheet" href = "${project}cssall/topNbottom.css"/>
-<script type = "text/javascript" src = "${project}cssall/js/jquery-3.4.1.min.js"></script>
-<script type = "text/javascript" src = "${project}cssall/js/request.js"></script>
-<script type = "text/javascript" src = "${project}suncloth/script.js"></script>
+<link type = "text/css" rel = "stylesheet" href = "${project}cssall/top_bottom.css"/>
+<script src = "${project}cssall/js/jquery-3.4.1.min.js"></script>
+<script src = "${project}cssall/js/request.js"></script>
+<script src = "${project}suncloth/script.js"></script>

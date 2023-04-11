@@ -47,7 +47,7 @@ $(function() {
 						</td>
 						<!-- 상세 페이지 -->
 						<td align = "left">
-						<a href = "FAQForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
+						<a href = "FAQForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}">
 						${list.subject}
 						</a></td>
 						<td>${list.writer}</td>
@@ -96,8 +96,8 @@ $(function() {
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "FAQ.do?choose=${choose}">[◀◀]</a>
-							<a href = "FAQ.do?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
+							<a href = "FAQ?choose=${choose}">[◀◀]</a>
+							<a href = "FAQ?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -106,14 +106,14 @@ $(function() {
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "FAQ.do?pageNum=${i}&choose=${choose}">[${i}]</a></span>				
+								<span><a href = "FAQ?pageNum=${i}&choose=${choose}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "FAQ.do?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-							<a href = "FAQ.do?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
+							<a href = "FAQ?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
+							<a href = "FAQ?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

@@ -23,7 +23,7 @@
 		<p><span style = "color:gray;">${vo.name}</span>님 저희 쇼핑몰을 이용해주셔서 감사합니다.</p>
 	</div>
     
-    <form name = "modifyView" action = "modifyPro.do" method = "post" id = "joinus"
+    <form name = "modifyView" action = "modifyPro" method = "post" id = "joinus"
     onsubmit = "return modifyCheck();">
 	    <p style = "float:left;">기본정보</p>
 	    <p style = "float:right;"><img src = "./ascloimage/snorlax.png" width = "12px" height = "12px"> 필수입력사항</p>

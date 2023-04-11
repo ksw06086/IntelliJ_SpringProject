@@ -12,7 +12,7 @@
 <c:if test="${dcnt != 0}">
 <script type = "text/javascript">
 	alert("삭제가 정상 처리되었습니다.");
-	window.location = "h_FAQ.do?choose=${choose}&pageNum=${pageNum}";
+	window.location = "h_FAQ?choose=${choose}&pageNum=${pageNum}";
 </script>
 </c:if>
 </body>

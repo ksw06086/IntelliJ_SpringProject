@@ -10,11 +10,11 @@
 </script>
 </c:if>
 <c:if test="${icnt != 0}">
-	<!-- cnt를 가지고 mainSuccess.do로 이동 -->
-	<%-- response.sendRedirect("mainSuccess.do?cnt=" + cnt); --%>
+	<!-- cnt를 가지고 mainSuccess로 이동 -->
+	<%-- response.sendRedirect("mainSuccess?cnt=" + cnt); --%>
 	<script type="text/javascript">
 		alert("추가 완료");
-		window.location = "h_product.do";
+		window.location = "h_product";
 	</script>
 </c:if>
 </body>

@@ -2,17 +2,23 @@ package com.spring.project.repository;
 
 import com.spring.project.dto.*;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Repository;
 
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMessage.RecipientType;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 @Repository
 @RequiredArgsConstructor
@@ -1057,17 +1063,34 @@ public class MemberRepositoryImpl implements MemberRepository {
 
 	// 메일 보내기
 	@Override
-	public void sendmail(String email, String key) {
+	public void sendmail(String sendemail, String key) throws Exception{
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext("emailBean.xml");
+		JavaMailSenderImpl mailSender = (JavaMailSenderImpl)ctx.getBean("mailSender");
+
+		// 메일 내용
+		String subject = "인증번호가 발송되었습니다. 인증번호를 확인해주세요";
+		String content = "suncloth에서 이메일 인증을 위한 인증번호를 보냅니다! 인증번호는 " + key + "입니다. 감사합니다.";
+
+		// 보내는 사람
+		String from = "k-sunwo@naver.com";
+
+		// 받는 사람
+		String[] to = new String[1];
+		to[0] = sendemail;
+
 		try {
-			MimeMessage message = mailSender.createMimeMessage();
-			
-			String txt = "회원가입 인증메일입니다. 링크를 눌러 이메일을 인증하십셔! 인증 비밀번호는 " + key +"입니다.";
-			message.setSubject("회원가입 인증 메일입니다.");
-			message.setText(txt, "UTF-8", "html");
-			message.setFrom(new InternetAddress("admin@mss.com"));
-			message.addRecipient(RecipientType.TO, new InternetAddress(email));
-			
-			mailSender.send(message);
+			// 메일 내용 넣을 객체와, 이를 도와주는 Helper 객체 생성
+			MimeMessage mail = mailSender.createMimeMessage();
+			MimeMessageHelper mailHelper = new MimeMessageHelper(mail, "UTF-8");
+
+			// 메일 내용을 채워줌
+			mailHelper.setFrom(from);	// 보내는 사람 셋팅
+			mailHelper.setTo(to);		// 받는 사람 셋팅
+			mailHelper.setSubject(subject);	// 제목 셋팅
+			mailHelper.setText(content);	// 내용 셋팅
+
+			// 메일 전송
+			mailSender.send(mail);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

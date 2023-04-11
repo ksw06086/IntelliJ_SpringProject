@@ -71,12 +71,12 @@
     	<input type = "button" id = "list" name = "back" value = "뒤로가기"  style = "font-size: .7em;"
     	onclick = "window.history.back();">
     	</c:if>
-    	<a href = "QnA.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "QnA?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;"></a>
     	<c:if test="${vo.writer == sessionScope.memId}">
-    	<a href = "QnAupdate.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "QnAupdate?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "update" value = "수정"  style = "font-size: .7em;"></a>
-    	<a href = "QnAdeletePro.do?onenum=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "QnAdeletePro?onenum=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "delete" value = "삭제"  style = "font-size: .7em;"></a>
     	</c:if>
     </div>
@@ -88,13 +88,13 @@
     		<c:if test="${vo.fwsubject != null}">
 	    		<tr id = "before">
 	    			<td><img src = "ascloimage/up.png" width = "12px" height = "12px">이전글</td>
-	    			<td><a href = "QnAForm.do?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.fwtextType}">${vo.fwsubject}</a></td>
+	    			<td><a href = "QnAForm?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.fwtextType}">${vo.fwsubject}</a></td>
 	    		</tr>
     		</c:if>
     		<c:if test="${vo.nextsubject != null}">
 	    		<tr id = "after">
 	    			<td><img src = "ascloimage/down.png" width = "12px" height = "12px">다음글</td>
-	    			<td><a href = "QnAForm.do?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.nexttextType}">${vo.nextsubject}</a></td>
+	    			<td><a href = "QnAForm?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.nexttextType}">${vo.nextsubject}</a></td>
 	    		</tr>
     		</c:if>
     	</table>

@@ -103,8 +103,8 @@ order<%@ page language="java" contentType="text/html; charset=UTF-8"
 						<c:if test="${cnt > 0}">
 							<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 							<c:if test="${startPage > pageBlock}">
-								<a href = "mileage.do">[◀◀]</a>
-								<a href = "mileage.do?pageNum=${startPage - pageBlock}">[◀]</a>
+								<a href = "mileage">[◀◀]</a>
+								<a href = "mileage?pageNum=${startPage - pageBlock}">[◀]</a>
 							</c:if>
 							
 							<!-- 블럭내의 페이지 번호 -->
@@ -113,14 +113,14 @@ order<%@ page language="java" contentType="text/html; charset=UTF-8"
 									<span><b>[${i}]</b></span>				
 								</c:if>
 								<c:if test="${i != currentPage}">
-									<span><a href = "mileage.do?pageNum=${i}">[${i}]</a></span>				
+									<span><a href = "mileage?pageNum=${i}">[${i}]</a></span>
 								</c:if>
 							</c:forEach>
 							
 							<!-- 다음블럭 [▶] / 끝[▶▶] -->
 							<c:if test="${pageCount > endPage}">
-								<a href = "mileage.do?pageNum=${startPage + pageBlock}">[▶]</a>
-								<a href = "mileage.do?pageNum=${pageCount}">[▶▶]</a>
+								<a href = "mileage?pageNum=${startPage + pageBlock}">[▶]</a>
+								<a href = "mileage?pageNum=${pageCount}">[▶▶]</a>
 							</c:if>
 						</c:if>
 					</th>

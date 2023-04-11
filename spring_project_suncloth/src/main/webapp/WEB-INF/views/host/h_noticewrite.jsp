@@ -7,7 +7,7 @@
 <%@ include file = "topmenu.jsp" %>
 
 <section>
-<form action = "h_noticePro.do" method = "post" name = "h_noticeform" enctype="multipart/form-data">
+<form action = "h_noticePro" method = "post" name = "h_noticeform" enctype="multipart/form-data">
 	<input type = "hidden" name = "choose" value = "${choose}">
 	<input type = "hidden" name = "num" value = "${num}">
 	<input type = "hidden" name = "ref" value = "${ref}">
@@ -20,7 +20,7 @@
 			<%@ include file = "h_boardLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice.do?choose=${choose}'"></p>
+					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice?choose=${choose}'"></p>
 					<p><b>[공지] 게시글 등록</b></p>
 					<p><input type = "submit" value = "저장" id = "save"></p>
 				</div>

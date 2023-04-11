@@ -16,7 +16,7 @@
 	if(rs){
 		window.history.back();
 	} else {
-		window.location = "h_product.do?pageNum=${pageNum}";
+		window.location = "h_product?pageNum=${pageNum}";
 	}
 </script>
 </c:if>

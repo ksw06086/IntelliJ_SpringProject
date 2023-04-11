@@ -31,19 +31,19 @@ $(function() {
     <div id = "likehtml">
     	<table>
     		<tr>
-    			<td><a href = "notice.do?choose=1">
+    			<td><a href = "notice?choose=1">
     				<img src = "./ascloimage/notice.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				공지사항
     				</a>
     			</td>
     			
-    			<td><a href = "QnA.do?choose=2">
+    			<td><a href = "QnA?choose=2">
     				<img src = "./ascloimage/qna.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				상품문의
     				</a>
     			</td>
     			
-    			<td><a href = "review.do?choose=4">
+    			<td><a href = "review?choose=4">
     				<img src = "./ascloimage/review.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				사용후기
     				</a>
@@ -106,7 +106,7 @@ $(function() {
 						</td>
 						<td>${list.state}</td>
 						<td align = "left">
-						<a href = "QnAForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&textType=${list.textType}">
+						<a href = "QnAForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&textType=${list.textType}">
 						<c:if test="${list.ref_level > 0}">
 							&nbsp;<img src = "ascloimage/re.png" border = "0" width = "20" height = "15">
 						</c:if>
@@ -166,8 +166,8 @@ $(function() {
 					<c:if test="${cnt > 0}">
 						<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 						<c:if test="${startPage > pageBlock}">
-							<a href = "QnA.do?choose=${choose}">[◀◀]</a>
-							<a href = "QnA.do?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
+							<a href = "QnA?choose=${choose}">[◀◀]</a>
+							<a href = "QnA?pageNum=${startPage - pageBlock}&choose=${choose}">[◀]</a>
 						</c:if>
 						
 						<!-- 블럭내의 페이지 번호 -->
@@ -176,14 +176,14 @@ $(function() {
 								<span><b>[${i}]</b></span>				
 							</c:if>
 							<c:if test="${i != currentPage}">
-								<span><a href = "QnA.do?pageNum=${i}&choose=${choose}">[${i}]</a></span>				
+								<span><a href = "QnA?pageNum=${i}&choose=${choose}">[${i}]</a></span>
 							</c:if>
 						</c:forEach>
 						
 						<!-- 다음블럭 [▶] / 끝[▶▶] -->
 						<c:if test="${pageCount > endPage}">
-							<a href = "QnA.do?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
-							<a href = "QnA.do?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
+							<a href = "QnA?pageNum=${startPage + pageBlock}&choose=${choose}">[▶]</a>
+							<a href = "QnA?pageNum=${pageCount}&choose=${choose}">[▶▶]</a>
 						</c:if>
 					</c:if>
 				</th>

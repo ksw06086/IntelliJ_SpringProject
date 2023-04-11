@@ -12,7 +12,7 @@
 <c:if test="${dcnt != 0}">
 <script type = "text/javascript">
 	alert("삭제가 정상 처리되었습니다.");
-	window.location = "cart.do";
+	window.location = "cart";
 </script>
 </c:if>
 </body>

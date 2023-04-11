@@ -7,7 +7,7 @@
 <%@ include file = "topmenu.jsp" %>
 
 <section>
-<form action = "h_memberPro.do" method = "post" name = "h_memberform">
+<form action = "h_memberPro" method = "post" name = "h_memberform">
 	<input type = "hidden" name = "pageNum" value = "${pageNum}">
 	<input type = "hidden" name = "id" value = "${vo.id}">
 	<table id = "middle">
@@ -17,10 +17,10 @@
 			<%@ include file = "h_memberLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "회원리스트" id = "memberlist" onclick = "window.location = 'h_member.do?pageNum=${pageNum}'"></p>
+					<p><input type = "button" value = "회원리스트" id = "memberlist" onclick = "window.location = 'h_member?pageNum=${pageNum}'"></p>
 					<p><b>회원관리</b></p>
 					<p><input type = "submit" value = "저장" id = "save">
-					<input type = "button" value = "탈퇴시키기" id = "memberout" onclick = "window.location = 'h_deletePro.do?id=${vo.id}&pageNum=${pageNum}'"></p>
+					<input type = "button" value = "탈퇴시키기" id = "memberout" onclick = "window.location = 'h_deletePro?id=${vo.id}&pageNum=${pageNum}'"></p>
 				</div>
 				
 				<div id = "product">

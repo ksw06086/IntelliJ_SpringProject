@@ -18,7 +18,7 @@ $(function() {
 <%@ include file = "topmanu.jsp" %>
 
 <section>
-<form action = "QnAPro.do" method = "post" name = "QnAwriteForm" enctype="multipart/form-data">
+<form action = "QnAPro" method = "post" name = "QnAwriteForm" enctype="multipart/form-data">
 	<input type = "hidden" name = "choose" value = "${choose}">
 	<input type = "hidden" name = "pageNum" value = "${pageNum}">
 	<input type = "hidden" name = "num" value = "${num}">
@@ -121,9 +121,9 @@ $(function() {
     
     <div id = "golist" style = "margin: 10px 0px 50px; text-align: right;">
     	<input type = "button" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;" 
-    	onclick = "window.location = 'QnA.do?num=${num}&number=${number}&choose=${choose}'">
+    	onclick = "window.location = 'QnA?num=${num}&number=${number}&choose=${choose}'">
     	<input type = "button" id = "cancel" name = "cancelN" value = "취소"  style = "font-size: .7em;" 
-    	onclick = "QnA.do?num=${num}&number=${number}&choose=${choose}">
+    	onclick = "QnA?num=${num}&number=${number}&choose=${choose}">
     	<input type = "submit" id = "input" name = "inputN" value = "등록"  style = "font-size: .7em;">
     </div>
     

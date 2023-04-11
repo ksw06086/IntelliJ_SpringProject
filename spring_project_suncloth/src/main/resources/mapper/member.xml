@@ -834,8 +834,9 @@
 		insert into mvc_cloths_tbl(num, name, content, mediumcode, tex, brandnum, icon, plus,
 		saleprice, buyprice, deliday, deliprice, mainfile, file1, file2,
 		file3, file4, file5, reg_date, withprdnum)
-		values (cloths_seq.nextval, #{name}, #{content}, #{mediumcode}, #{tex}, #{brandnum}, #{icon}, #{plus}, #{saleprice}
-		, #{buyprice}, #{deliday}, #{deliprice}, #{mainfile}, #{file1}, #{file2}, #{file3}, #{file4}, #{file5}, #{reg_date}, #{withprdnum})
+		values (cloths_seq.nextval, #{name}, #{content}, #{mediumcode}, #{tex}, #{brandnum}, #{icon, jdbcType=VARCHAR}, #{plus}, #{saleprice}
+		, #{buyprice}, #{deliday}, #{deliprice}, #{mainfile}, #{file1, jdbcType=VARCHAR}, #{file2, jdbcType=VARCHAR}, #{file3, jdbcType=VARCHAR}
+		, #{file4, jdbcType=VARCHAR}, #{file5, jdbcType=VARCHAR}, #{reg_date}, #{withprdnum})
  	</insert>
 	
 	<!-- product 리스트 -->
@@ -1458,18 +1459,7 @@
  	</select>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	<insert id="visitplus" parameterType="java.util.Map">
 		insert into mvc_clicktotal_tbl values(clicktotal_seq.nextval, #{strid}, sysdate)
  	</insert>

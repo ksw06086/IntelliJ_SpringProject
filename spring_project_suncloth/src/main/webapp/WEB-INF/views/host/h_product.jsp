@@ -45,13 +45,13 @@ $(function() {
 		<tr>
 			<%@ include file = "h_productLeft.jsp" %>
 			<td id = "tabright">
-				<form action = "h_productinput.do" method = "post" enctype="multipart/form-data">
+				<form action = "h_productinput" method = "post" enctype="multipart/form-data">
 				<div id = "righttop">
 					<p><b>판매상품관리</b></p>
 					<p><input type = "submit" value = "상품등록" id = "prdinput"></p>
 				</div>
 				</form>
-				<form action = "h_productselect.do" method = "post" name = "searchForm">
+				<form action = "h_productselect" method = "post" name = "searchForm">
 				<table id = "searchifs">
 					<col style = "width:15%;">
 					<col>
@@ -72,15 +72,6 @@ $(function() {
 						</select>
 						<select id = "twopart" name = "tpart"> <!-- 일단 아우터것만 이거는 jQuery로 조건써서 갖다넣을려고함 -->
 							<option value = "">2차 카테고리</option>
-							<!-- 게시글이 있으면 -->
-							<c:if test="${mediumsrhCnt > 0}">
-								<c:forEach var = "list" items = "${medilist}">
-									<option value = "${list.mediumcode}">${list.mediumname}</option>
-								</c:forEach>
-							</c:if>
-							<!-- 게시글이 없으면 -->
-							<c:if test="${mediumsrhCnt <= 0}">
-							</c:if>
 						</select>
 						</td>
 					</tr>
@@ -168,7 +159,7 @@ $(function() {
 				</form>
 				
 				<div id = "result">
-				<form action = "h_productdeletePro.do" method = "post" name = "completeForm">
+				<form action = "h_productdeletePro" method = "post" name = "completeForm">
 					<input type = "hidden" name = "pageNum" value = "${pageNum}">
 					<table id = "resulttop">
 						<td>검색 
@@ -212,7 +203,7 @@ $(function() {
 									<td><input type = "checkbox" name = "productchecks" class = "productcheck"  value = "${list.num}"></td>
 									<td>
 									<c:if test="${list.mainfile != null}">
-									<img src="fileready/${list.mainfile}" width = "50px" height = "60px">
+									<img src="${project}fileready/${list.mainfile}" width = "50px" height = "60px">
 									</c:if>
 									</td>
 									<td>${number}(${list.num})
@@ -223,14 +214,14 @@ $(function() {
 									${list.mediumpartname}
 									</td>
 									<td style = "text-align:left;">
-									<a href = "h_productForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}">
+									<a href = "h_productForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}">
 									${list.name}
 									</a></td>
 									<td><b>KRW ${list.saleprice}</b></td>
 									<td>${list.deliprice}</td>
 									<td><fmt:formatDate type="both" pattern="yyyy-MM-dd HH:mm" value="${list.reg_date}"/></td>
 									<td><input type = "button" value = "color/size 추가" name = "csinput" 
-									onclick = "window.location = 'h_csinput.do?num=${list.num}&pageNum=${pageNum}'"></td>
+									onclick = "window.location = 'h_csinput?num=${list.num}&pageNum=${pageNum}'"></td>
 								</tr>
 							</c:forEach>
 						</c:if>
@@ -259,8 +250,8 @@ $(function() {
 											<c:if test="${cnt > 0}">
 												<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 												<c:if test="${startPage > pageBlock}">
-													<a href = "h_product.do">[◀◀]</a>
-													<a href = "h_product.do?pageNum=${startPage - pageBlock}">[◀]</a>
+													<a href = "h_product">[◀◀]</a>
+													<a href = "h_product?pageNum=${startPage - pageBlock}">[◀]</a>
 												</c:if>
 												
 												<!-- 블럭내의 페이지 번호 -->
@@ -269,14 +260,14 @@ $(function() {
 														<span><b>[${i}]</b></span>				
 													</c:if>
 													<c:if test="${i != currentPage}">
-														<span><a href = "h_product.do?pageNum=${i}">[${i}]</a></span>				
+														<span><a href = "h_product?pageNum=${i}">[${i}]</a></span>
 													</c:if>
 												</c:forEach>
 												
 												<!-- 다음블럭 [▶] / 끝[▶▶] -->
 												<c:if test="${pageCount > endPage}">
-													<a href = "h_product.do?pageNum=${startPage + pageBlock}">[▶]</a>
-													<a href = "h_product.do?pageNum=${pageCount}">[▶▶]</a>
+													<a href = "h_product?pageNum=${startPage + pageBlock}">[▶]</a>
+													<a href = "h_product?pageNum=${pageCount}">[▶▶]</a>
 												</c:if>
 											</c:if>
 										</th>

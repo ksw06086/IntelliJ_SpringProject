@@ -10,10 +10,10 @@
 				<td><b>·상품</b></td>
 			</tr>
 			<tr>
-				<td>&emsp;<a href = "h_product.do">판매상품관리</a></td>
+				<td>&emsp;<a href = "h_product">판매상품관리</a></td>
 			</tr>
 			<tr>
-				<td>&emsp;<a href = "h_brand.do">브랜드관리</a></td>
+				<td>&emsp;<a href = "h_brand">브랜드관리</a></td>
 			</tr>
 		</table>
 	</div>

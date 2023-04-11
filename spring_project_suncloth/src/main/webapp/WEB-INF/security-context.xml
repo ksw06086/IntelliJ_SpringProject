@@ -6,32 +6,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 정적 리소스 파일들에는 보안설정을 하지 않음 -->
-    <!-- include는 시큐리티 영역과 상관 없는 폴더이다. -->
-    <sec:http pattern="/a*" security="none" />
-    <sec:http pattern="/b*" security="none" />
-    <sec:http pattern="/c*" security="none" />
-    <sec:http pattern="/d*" security="none" />
-    <sec:http pattern="/e*" security="none" />
-    <sec:http pattern="/f*" security="none" />
-    <sec:http pattern="/g*" security="none" />
-    <sec:http pattern="/i*" security="none" />
-    <sec:http pattern="/j*" security="none" />
-    <sec:http pattern="/k*" security="none" />
-    <sec:http pattern="/l*" security="none" />
-    <sec:http pattern="/m*" security="none" />
-    <sec:http pattern="/n*" security="none" />
-    <sec:http pattern="/o*" security="none" />
-    <sec:http pattern="/p*" security="none" />
-    <sec:http pattern="/q*" security="none" />
-    <sec:http pattern="/r*" security="none" />
-    <sec:http pattern="/s*" security="none" />
-    <sec:http pattern="/t*" security="none" />
-    <sec:http pattern="/u*" security="none" />
-    <sec:http pattern="/v*" security="none" />
-    <sec:http pattern="/w*" security="none" />
-    <sec:http pattern="/x*" security="none" />
-    <sec:http pattern="/y*" security="none" />
     <sec:http auto-config="true" use-expressions="true" create-session="never">
+        <sec:csrf disabled="true"/>
         <!-- 관리자 영역 -->
         <sec:intercept-url pattern="/h*"
                            access="hasAuthority('USER_MANAGER')" />
@@ -57,6 +33,7 @@
 
         <!-- 접근권한이 없는 경우의 코드 -->
         <sec:access-denied-handler ref="userDeniedHandler"/>
+
     </sec:http>
 
     <bean id="userLoginSuccessHandler" class="com.spring.project.service.UserLoginSuccessHandler" />

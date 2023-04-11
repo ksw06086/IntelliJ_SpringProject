@@ -20,8 +20,8 @@
 					<p><input type = "button" value = "상품리스트" id = "prdlist"></p>
 					<p><b>color/size 재고 상품 등록</b></p>
 					<p>
-					<input type = "submit" value = "수정하기" id = "prdinput" onclick = "javascript: productForm.action = 'h_csupdate.do'">
-					<input type = "submit" value = "등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_csPro.do'">
+					<input type = "submit" value = "수정하기" id = "prdinput" onclick = "javascript: productForm.action = 'h_csupdate'">
+					<input type = "submit" value = "등록" id = "prdinput" onclick = "javascript: productForm.action = 'h_csPro'">
 					</p>
 				</div>
 				
@@ -40,7 +40,7 @@
 						<tr>
 			    			<td style = "text-align:center; padding: 10px 0px;">
 			    			<div id = "image" style = "background-color:#ccc; width: 100px; height: 100px; line-height:100px; margin:0px auto;">
-			    			<img src = 'fileready/${vo.mainfile}' width = '100px' height = '100px'></div></td>
+			    			<img src = '${project}fileready/${vo.mainfile}' width = '100px' height = '100px'></div></td>
 			    			<td>${vo.name}
 			    			</td>
 			    		</tr>

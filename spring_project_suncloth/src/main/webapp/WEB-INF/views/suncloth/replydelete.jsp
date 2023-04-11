@@ -12,7 +12,7 @@
 <c:if test="${dcnt != 0}">
 <script type = "text/javascript">
 	alert("답글 삭제가 정상 처리되었습니다.");
-	window.location = "reviewForm.do?choose=${choose}&pageNum=${pageNum}&rpageNum=${rpageNum}&number=${number}&num=${num}";
+	window.location = "reviewForm?choose=${choose}&pageNum=${pageNum}&rpageNum=${rpageNum}&number=${number}&num=${num}";
 </script>
 </c:if>
 </body>

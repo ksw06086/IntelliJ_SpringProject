@@ -67,9 +67,9 @@
     </div>
     
     <div id = "golist" style = "margin: 10px 0px 50px; text-align: right;">
-    	<a href = "QnA.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "QnA?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "button" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;"></a>
-    	<a href = "h_QnAwrite.do?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "h_QnAwrite?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "button" id = "answer" name = "answerN" value = "답글달기"  style = "font-size: .7em;"></a>
     </div>
     
@@ -80,13 +80,13 @@
     		<c:if test="${vo.fwsubject != null}">
 	    		<tr id = "before">
 	    			<td><img src = "ascloimage/up.png" width = "12px" height = "12px">이전글</td>
-	    			<td><a href = "QnAForm.do?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.fwtextType}">${vo.fwsubject}</a></td>
+	    			<td><a href = "QnAForm?num=${vo.fwnum}&number=${number-1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.fwtextType}">${vo.fwsubject}</a></td>
 	    		</tr>
     		</c:if>
     		<c:if test="${vo.nextsubject != null}">
 	    		<tr id = "after">
 	    			<td><img src = "ascloimage/down.png" width = "12px" height = "12px">다음글</td>
-	    			<td><a href = "QnAForm.do?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.nexttextType}">${vo.nextsubject}</a></td>
+	    			<td><a href = "QnAForm?num=${vo.nextnum}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&textType=${vo.nexttextType}">${vo.nextsubject}</a></td>
 	    		</tr>
     		</c:if>
     	</table>

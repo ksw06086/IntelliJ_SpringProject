@@ -7,7 +7,7 @@
 <body onload = "brandupdateStart('${hps[0]}');">
 <%@ include file = "topmenu.jsp" %>
 
-<form action = "h_brandUpdatePro.do" method = "post" name = "h_brandform">
+<form action = "h_brandUpdatePro" method = "post" name = "h_brandform">
 <input type = "hidden" name = "number" value = "${number}">
 <input type = "hidden" name = "num" value = "${num}">
 <input type = "hidden" name = "pageNum" value = "${pageNum}">
@@ -19,7 +19,7 @@
 			<%@ include file = "h_boardLeft.jsp" %>
 			<td id = "tabright">
 				<div id = "righttop">
-					<p><input type = "button" value = "브랜드리스트" id = "brandlist" onclick = "window.location = 'h_brand.do'"></p>
+					<p><input type = "button" value = "브랜드리스트" id = "brandlist" onclick = "window.location = 'h_brand'"></p>
 					<p><b>브랜드관리</b></p>
 					<p><input type = "submit" value = "수정" id = "brandupdate"></p>
 				</div>

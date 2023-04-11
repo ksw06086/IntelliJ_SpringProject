@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file = "setting.jsp" %>
-<link type = "text/css" rel = "stylesheet" href = "${project}cssall/main.css?ver=1.5"/>
+<link type = "text/css" rel = "stylesheet" href = "${project}cssall/main.css"/>
 <html>
 <body>
 <%@ include file = "topmanu.jsp" %>
@@ -10,7 +10,7 @@
 	<figure class = "imgblock">
 	<c:if test="${srhCnt > 0}">
 		<c:forEach var = "list" items = "${list}" varStatus="status" begin="0" end="5">
-			<a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "100%" height = "600px"></a>
+			<a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "100%" height = "600px"></a>
 		</c:forEach>
 	</c:if>
 	</figure>
@@ -20,10 +20,10 @@
      <div id = "threemenu">
 		<ul style = "padding:0px;">
 			<c:forEach var = "list" items = "${list}" varStatus="status" begin="0" end="1">
-				<li style = "margin-right: 27px"><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "405px" height = "300px"></a></li>
+				<li style = "margin-right: 27px"><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "405px" height = "300px"></a></li>
 			</c:forEach>
 			<c:forEach var = "list" items = "${list}" varStatus="status" begin="2" end="2">
-				<li style = "margin-right: 27px"><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "405px" height = "300px"></a></li>
+				<li style = "margin-right: 27px"><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "405px" height = "300px"></a></li>
 			</c:forEach>
 		</ul>
 	</div>
@@ -42,7 +42,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${outerlist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -50,14 +50,14 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${outerlist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${outerlist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -67,7 +67,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${toplist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -75,14 +75,14 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${toplist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${toplist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -92,7 +92,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${shirtlist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -100,14 +100,14 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${shirtlist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${shirtlist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -117,7 +117,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${knitlist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -125,14 +125,14 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${knitlist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${knitlist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -142,7 +142,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${bottomlist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -150,14 +150,14 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${bottomlist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${bottomlist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -167,7 +167,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${suitlist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -175,14 +175,14 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${suitlist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${suitlist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -192,7 +192,7 @@
 			<div class = oneblock>
 				<ul>
 				<c:forEach var = "list" items = "${acclist}" varStatus="status" begin="0" end="0">
-					<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
+					<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "400px" height = "660px"></a></li>
 				</c:forEach>
 				</ul>
 			</div>
@@ -200,18 +200,19 @@
 				<div class = "one">
 					<ul>
 						<c:forEach var = "list" items = "${acclist}" varStatus="status" begin="1" end="3">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div class = "two">
 					<ul>
 						<c:forEach var = "list" items = "${acclist}" varStatus="status" begin="4" end="6">
-							<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
+							<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "250px" height = "320px"></a></li>
 						</c:forEach>
 					</ul>
 				</div>
 			</div>
+		</section>
 		</div>
 	</section>
 		
@@ -224,8 +225,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -233,8 +234,8 @@
 				<c:if test="${status.index%3 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -242,8 +243,8 @@
 				<c:if test="${status.index%3 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -263,8 +264,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -272,8 +273,8 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -281,8 +282,8 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -290,8 +291,8 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -311,8 +312,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -320,8 +321,8 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -329,8 +330,8 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -338,8 +339,8 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -363,8 +364,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -372,8 +373,8 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -381,8 +382,8 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -390,8 +391,8 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -411,8 +412,8 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -420,8 +421,8 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -429,8 +430,8 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>
@@ -438,8 +439,8 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
-						<li><a href = "productclick.do?num=${list.num}&name=${list.name}">${list.name}</a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
 				</td>

@@ -61,7 +61,7 @@ ${srhCnt}
 					</c:if>
 					</td>
 		    		<td style = "text-align:left;">
-					<a href = "h_productForm.do?num=${list.num}&number=${number+1}&pageNum=${pageNum}">
+					<a href = "h_productForm?num=${list.num}&number=${number+1}&pageNum=${pageNum}">
 					<b>${list.prdname}</b><br>
 		    		<span style = "color: #282828;">[옵션: ${list.colorname}/${list.sizename}]</span>
 		    		</a>
@@ -75,11 +75,11 @@ ${srhCnt}
 		    		<td style = "border-left: 1px solid rgba(204, 204, 204,0.5);">${list.price * list.count}</td>
 		    		<td style = "border-left: 1px solid rgba(204, 204, 204,0.5);">
 		    		<input type = "button" value = "주문하기" id = "order" style = "width:80px;"
-		    		onclick = "window.location = 'orderform.do?num=${list.prdnum}&color=${list.colorcode}&size=${list.sizecode}&count=${list.count}&swit=${list.num}&swh=1'"><br>
+		    		onclick = "window.location = 'orderform?num=${list.prdnum}&color=${list.colorcode}&size=${list.sizecode}&count=${list.count}&swit=${list.num}&swh=1'"><br>
 		    		<input type = "button" value = "관심상품등록" id = "likein" style = "width:80px;"
-		    		onclick = "window.location = 'wishlistAdd.do?num=${list.prdnum}&color=${list.colorcode}&size=${list.sizecode}&count=${list.count}&swit=${list.num}&price=${list.price * list.count}'"><br>
+		    		onclick = "window.location = 'wishlistAdd?num=${list.prdnum}&color=${list.colorcode}&size=${list.sizecode}&count=${list.count}&swit=${list.num}&price=${list.price * list.count}'"><br>
 		    		<input type = "button" value = "X 삭제" id = "del" style = "width:80px;"
-		    		onclick = "window.location = 'cartdel.do?num=${list.num}'">
+		    		onclick = "window.location = 'cartdel?num=${list.num}'">
 		    		<c:set var="ncount" value = "${ncount + list.price}"/>
 		    		<c:set var="nprice" value = "${nprice + list.price + list.delipay}"/>
 		    		<c:set var="ndelipay" value = "${ndelipay + list.delipay}"/>
@@ -101,8 +101,8 @@ ${srhCnt}
 				<c:if test="${cnt > 0}">
 					<!-- 처음[◀◀] : ㅁ + 한자키 / 이전블록 [◀] -->
 					<c:if test="${startPage > pageBlock}">
-						<a href = "order.do">[◀◀]</a>
-						<a href = "order.do?pageNum=${startPage - pageBlock}">[◀]</a>
+						<a href = "order">[◀◀]</a>
+						<a href = "order?pageNum=${startPage - pageBlock}">[◀]</a>
 					</c:if>
 					
 					<!-- 블럭내의 페이지 번호 -->
@@ -111,14 +111,14 @@ ${srhCnt}
 							<span><b>[${i}]</b></span>				
 						</c:if>
 						<c:if test="${i != currentPage}">
-							<span><a href = "order.do?pageNum=${i}">[${i}]</a></span>				
+							<span><a href = "order?pageNum=${i}">[${i}]</a></span>
 						</c:if>
 					</c:forEach>
 					
 					<!-- 다음블럭 [▶] / 끝[▶▶] -->
 					<c:if test="${pageCount > endPage}">
-						<a href = "order.do?pageNum=${startPage + pageBlock}">[▶]</a>
-						<a href = "order.do?pageNum=${pageCount}">[▶▶]</a>
+						<a href = "order?pageNum=${startPage + pageBlock}">[▶]</a>
+						<a href = "order?pageNum=${pageCount}">[▶▶]</a>
 					</c:if>
 				</c:if>
 			</th>
@@ -136,7 +136,7 @@ ${srhCnt}
     	</tr>
     	<tr>
     		<td colspan = "8">
-    		<p style = "float: right;"><input type = button value = "장바구니비우기" id = "alldel" onclick = "window.location = 'cartalldel.do'"></p>
+    		<p style = "float: right;"><input type = button value = "장바구니비우기" id = "alldel" onclick = "window.location = 'cartalldel'"></p>
     		</td>
     	</tr>
     </table>
@@ -161,7 +161,7 @@ ${srhCnt}
      
     <div style = "width:100%; text-align:center; position:relative; margin:20px 0px 100px;">
 	    <input type = "button" value = "쇼핑계속하기" id = "goshopping" style = "position: absolute; right:0; top:0.5px;"
-	    onclick = "window.location = 'main.do'">
+	    onclick = "window.location = 'main'">
     </div>
 	
 <%@ include file = "bottommenu.jsp" %>
