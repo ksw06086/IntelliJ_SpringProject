@@ -20,7 +20,7 @@
 		<p><b>Q&A</b></p>
 	</div>
 	
-	<div id = "prddata" class = "oneandone">
+	<%--<div id = "prddata" class = "oneandone">
     	<table width = "100%">
     	<col style = "width: 20%;">
     	<col style = "width: 80%;">
@@ -35,7 +35,7 @@
     			</td>
     		</tr>
     	</table>
-    </div>
+    </div>--%>
 	
      
     <div id = "notice" class = "oneandone">
@@ -62,7 +62,7 @@
     	<p>${vo.content}</p>
     	
     	<c:if test="${vo.file1 != null}">
-			<img src="fileready/${vo.file1}" width = "46%">
+			<img src="${project}fileready/${vo.file1}" width = "46%">
 		</c:if>
     </div>
     

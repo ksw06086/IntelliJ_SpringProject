@@ -22,7 +22,7 @@
 			<td id = "tabright">
 				<div id = "righttop">
 					<p><input type = "button" value = "게시글 리스트" id = "boardlist" onclick = "window.location = 'h_notice?choose=${choose}'"></p>
-					<p><b>[FAQ] 게시글 등록</b></p>
+					<p><b>[QnA] 게시글 등록</b></p>
 					<p><input type = "submit" value = "저장" id = "save"></p>
 				</div>
 				<div id = "product">

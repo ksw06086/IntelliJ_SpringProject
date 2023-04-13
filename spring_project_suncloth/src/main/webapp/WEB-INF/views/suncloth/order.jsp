@@ -1,4 +1,4 @@
-order<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file = "setting.jsp" %>
 <link type = "text/css" rel = "stylesheet" href = "${project}cssall/order.css"/>
@@ -113,7 +113,7 @@ ${srhCnt}/${cnt}
 		    		<br>[${list.num}]</td>
 		    		<td>
 					<c:if test="${list.mainfile != null}">
-					<img src="fileready/${list.mainfile}" width = "50px" height = "60px">
+					<img src="${project}fileready/${list.mainfile}" width = "50px" height = "60px">
 					</c:if>
 					</td>
 		    		<td style = "text-align:left;">
@@ -147,7 +147,7 @@ ${srhCnt}/${cnt}
 		<c:if test="${srhCnt <= 0}">
 			<tr class = "orderprd">
 				<td colspan = "7" align = "center">
-					게시글이 없습니다. 글을 작성해주세요!!
+					주문한 상품이 없을 때 나오는 글자입니다~!
 				</td>
 			</tr>
 		</c:if>

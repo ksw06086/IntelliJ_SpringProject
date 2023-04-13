@@ -70,7 +70,7 @@ $(function() {
 								<tr style = "text-align:center;" class = "orderprd">
 									<td>
 									<c:if test="${list.mainfile != null}">
-									<img src="fileready/${list.mainfile}" width = "50px" height = "60px">
+									<img src="${project}fileready/${list.mainfile}" width = "50px" height = "60px">
 									</c:if>
 									</td>
 									<!-- 상세 페이지 -->

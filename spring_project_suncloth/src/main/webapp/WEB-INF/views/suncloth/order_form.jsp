@@ -198,7 +198,7 @@ function go(val){
     	</tr>
     	<tr class = "orderprd">
     		<td><input type = "checkbox" name = "prdcheck" id = "check1"  value = "prd1"></td>
-    		<td><img src = "fileready/${cvo.mainfile}" width = "70px" height = "100px"></td>
+    		<td><img src = "${project}fileready/${cvo.mainfile}" width = "70px" height = "100px"></td>
     		<td style = "text-align:left;"><b>${cvo.name}</b><br>
     		<span style = "color: #282828;">[옵션: ${svo.colorname}/${svo.sizename}]</span>
     		</td>

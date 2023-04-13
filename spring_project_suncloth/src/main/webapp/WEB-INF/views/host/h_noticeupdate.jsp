@@ -55,7 +55,7 @@
 			    			required word-break:break-all placeholder = "글내용을 입력하세요!">${vo.content}
 							</textarea>
 							<c:if test="${vo.file1 != null}">
-								<img src="fileready/${vo.file1}" width = "5%">
+								<img src="${project}fileready/${vo.file1}" width = "5%">
 							</c:if></td>
 			    		</tr>
 			    		<tr>

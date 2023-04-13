@@ -108,7 +108,7 @@
 			    			style="resize: vertical; width:100%;">
 			    			${vo.content}&nbsp;
 			    			<c:if test="${vo.file1 != null}">
-								<img src="fileready/${vo.file1}" width = "46%">
+								<img src="${project}fileready/${vo.file1}" width = "46%">
 							</c:if>
 			    			</textarea>
 				     		</td>

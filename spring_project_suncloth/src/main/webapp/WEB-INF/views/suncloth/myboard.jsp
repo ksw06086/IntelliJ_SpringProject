@@ -68,7 +68,7 @@ $(function() {
 						<!-- 상세 페이지 -->
 						<td>
 						<c:if test="${list.file1 != null}">
-						<img src="fileready/${list.file1}" width = "50px" height = "60px">
+						<img src="${project}fileready/${list.file1}" width = "50px" height = "60px">
 						</c:if>
 						</td>
 						<td>${list.state}

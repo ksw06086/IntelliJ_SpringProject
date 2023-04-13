@@ -1,4 +1,4 @@
-order<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file = "setting.jsp" %>
 <link type = "text/css" rel = "stylesheet" href = "${project}cssall/cart.css"/>
@@ -44,7 +44,7 @@ ${srhCnt}
 				<tr class = "cartprd">
 		    		<td>
 					<c:if test="${list.mainfile != null}">
-					<img src="fileready/${list.mainfile}" width = "50px" height = "60px">
+					<img src="${project}fileready/${list.mainfile}" width = "50px" height = "60px">
 					</c:if>
 					</td>
 		    		<td style = "text-align:left;">
@@ -62,9 +62,9 @@ ${srhCnt}
 		    		<td style = "border-left: 1px solid rgba(204, 204, 204,0.5);">${list.price * list.count}</td>
 		    		<td style = "border-left: 1px solid rgba(204, 204, 204,0.5);">
 		    		<input type = "button" value = "주문하기" id = "order" style = "width:80px;"
-		    		onclick = "window.location = 'orderform?num=${list.prdnum}&color=${list.colorcode}&size=${list.sizecode}&count=${list.count}&swit=${list.num}&swh=2'"><br>
+		    		onclick = "window.location = 'orderform?num=${list.prdnum}&colorcode=${list.colorcode}&sizecode=${list.sizecode}&count=${list.count}&swit=${list.num}&swh=2'"><br>
 					<input type = "button" value = "장바구니 담기" id = "likein" style = "width:80px;"
-		    		onclick = "window.location = 'cartAdd?num=${list.prdnum}&color=${list.colorcode}&size=${list.sizecode}&count=${list.count}&price=${list.price*list.count}&swit=${list.num}'"><br>
+		    		onclick = "window.location = 'cartAdd?num=${list.prdnum}&colorcode=${list.colorcode}&sizecode=${list.sizecode}&count=${list.count}&price=${list.price*list.count}&swit=${list.num}'"><br>
 		    		<input type = "button" value = "X 삭제" id = "del" style = "width:80px;"
 		    		onclick = "window.location = 'wishlistdel?num=${list.num}'">
 		    		<c:set var="ncount" value = "${ncount + list.price}"/>

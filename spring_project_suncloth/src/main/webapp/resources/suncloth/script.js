@@ -162,6 +162,28 @@ function selectEmailChk() {
 	}
 }
 
+/* checkbox 한번에 체크 함수 */
+function all_check() {
+	if(document.inputForm.allcheck.checked){
+		document.inputForm.use_agree_chk.checked = true;
+		document.inputForm.data_agree_chk.checked = true;
+	} else {
+		document.inputForm.use_agree_chk.checked = false;
+		document.inputForm.data_agree_chk.checked = false;
+	}
+}
+
+/* checkbox 제거 시에 all체크 제거 함수 */
+function allcheck_remove() {
+	if(!document.inputForm.use_agree_chk.checked){
+		document.inputForm.allcheck.checked = false;
+	} else if(!document.inputForm.data_agree_chk.checked) {
+		document.inputForm.allcheck.checked = false;
+	} else {
+		document.inputForm.allcheck.checked = true;
+	}
+}
+
 //---- 중복확인 -----
 //중복확인 버튼 클릭시 서브창 open
 function confirmId() {
@@ -556,7 +578,7 @@ function ordersubmit() {
 	}
 }
 
-// 울ㄴㅇ
+// 이메일 인증 이동 버튼
 function formalChk() {
 	// id값 미입력 후 중복확인 버튼 클릭 시
 	if(!document.inputForm.idName.value){

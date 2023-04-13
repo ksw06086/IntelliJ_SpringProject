@@ -15,10 +15,7 @@ import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 @Repository
 @RequiredArgsConstructor
@@ -226,7 +223,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 		MemberRepository dao = sqlSession.getMapper(MemberRepository.class);
 		int insertCnt = dao.insertBoard(map);
 		int updateCnt = 1;
-		if((int)map.get("choose") != 5) {
+		if((int)map.get("choose") != 5 && maxnum(map) > 1) {
 			map.put("num", numSelect(map));
 			if(ref_level == 0) {
 				updateCnt = ifwupdate(map);
@@ -464,7 +461,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 				Map<String, Object> map = new HashMap<String, Object>();
 				map.put("nextnum", vo.getNextnum());
 				map.put("fwnum", vo.getFwnum());
-				map.put("table", "mvc_FAQ_tbl");
+				map.put("table", "QnA");
 				if(vo.getFwnum() != 0) {
 					fwupdate(map);
 				}
@@ -615,17 +612,13 @@ public class MemberRepositoryImpl implements MemberRepository {
 					
 				}
 				r_deleteCnt = refdelete(Integer.parseInt(checked[i]));
-				deleteCnt = dao.deleteFAQBoard(new String[]{checked[i]});
+				deleteCnt = dao.deletereviewBoard(new String[]{checked[i]});
 			}
 		} else {
 			deleteCnt = 0;
 		}
-		
-		if(r_deleteCnt == 0) {
-			return 0;
-		} else {
-			return deleteCnt;
-		}
+
+		return deleteCnt;
 	}
 
 	
@@ -1164,12 +1157,14 @@ public class MemberRepositoryImpl implements MemberRepository {
 	public int h_updatestate(Map<String, Object> map) {
 		int updateCnt = 0;
 		MemberRepository dao = sqlSession.getMapper(MemberRepository.class);
-		updateCnt = dao.selectstateCnt(map);
-		
+		updateCnt = dao.h_updatestate(map);
+
+		// 상품에 적혀진 적립금 금액 가져오기
 		int plus = h_plusgetting((int)map.get("prdnum"));
 		Map<String, Object> smap = new HashMap<String, Object>();
 		smap.put("plus", plus);
 		smap.put("strid", (String)map.get("gid"));
+		System.out.println("smap = " + smap);
 		
 		if(((String)map.get("orderstate")).equals("배송완료")) {
 			h_plusplus(smap);

@@ -165,7 +165,7 @@ $(function() {
 									<a href = "h_QnAupdate?num=${list.num}&number=${number+1}&pageNum=${pageNum}&choose=${choose}&ref=${list.ref}">
 									</c:if>
 									<c:if test="${list.ref_level > 0}">
-										&nbsp;<img src = "ascloimage/re.png" border = "0" width = "20" height = "15">
+										&nbsp;<img src = "${project}ascloimage/re.png" border = "0" width = "20" height = "15">
 									</c:if>
 									${list.subject}
 									</a></td>

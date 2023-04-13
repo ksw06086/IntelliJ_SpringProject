@@ -14,7 +14,7 @@
 		<p><b>REVIEW</b></p>
 	</div>
 	
-	<div id = "prddata" class = "oneandone">
+	<%--<div id = "prddata" class = "oneandone">
     	<table width = "100%">
     	<col style = "width: 20%;">
     	<col style = "width: 80%;">
@@ -29,7 +29,7 @@
     			</td>
     		</tr>
     	</table>
-    </div>
+    </div>--%>
 	
      
     <div id = "notice" class = "oneandone">
@@ -52,7 +52,7 @@
     	<p>${vo.content}</p>
     	
     	<c:if test="${vo.file1 != null}">
-			<img src="fileready/${vo.file1}" width = "46%">
+			<img src="${project}fileready/${vo.file1}" width = "46%">
 		</c:if>
     </div>
     
@@ -61,7 +61,7 @@
     	<input type = "button" id = "list" name = "back" value = "뒤로가기"  style = "font-size: .7em;"
     	onclick = "window.history.back();">
     	</c:if>
-    	<a href = "reivew?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
+    	<a href = "review?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">
     	<input type = "submit" id = "list" name = "listN" value = "목록"  style = "font-size: .7em;"></a>
     	<c:if test="${vo.writer == sessionScope.memId}">
     	<a href = "reviewupdate?num=${num}&number=${number}&pageNum=${pageNum}&choose=${choose}">

@@ -45,7 +45,7 @@ $(function() {
     	</table>
     </div>
 	
-	<div id = "prddata" class = "oneandone">
+	<%--<div id = "prddata" class = "oneandone">
     	<table width = "100%">
     	<col style = "width: 10%;">
     	<col style = "width: 90%;">
@@ -57,7 +57,7 @@ $(function() {
     			</td>
     		</tr>
     	</table>
-    </div>
+    </div>--%>
 	
      
     <div id = "review" class = "oneandone">
@@ -86,22 +86,6 @@ $(function() {
     		<tr>
     			<td style = "border-right:1px solid #ccc;">첨부파일1</td>
     			<td><input type = "file" id = "attachfile1" name = "file1"></td>
-    		</tr>
-    		<tr>
-    			<td style = "border-right:1px solid #ccc;">첨부파일2</td>
-    			<td><input type = "file" id = "attachfile2" name = "attachfileN"></td>
-    		</tr>
-    		<tr>
-    			<td style = "border-right:1px solid #ccc;">첨부파일3</td>
-    			<td><input type = "file" id = "attachfile3" name = "attachfileN"></td>
-    		</tr>
-    		<tr>
-    			<td style = "border-right:1px solid #ccc;">첨부파일4</td>
-    			<td><input type = "file" id = "attachfile4" name = "attachfileN"></td>
-    		</tr>
-    		<tr>
-    			<td style = "border-right:1px solid #ccc;">첨부파일5</td>
-    			<td><input type = "file" id = "attachfile5" name = "attachfileN"></td>
     		</tr>
     		<tr>
     			<td style = "border-right:1px solid #ccc;">비밀번호</td>

@@ -144,7 +144,7 @@ $(function() {
 									<c:set var="sysYear"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd" /></c:set>
 									<c:set var="boardYear"><fmt:formatDate value="${list.reg_date}" pattern="yyyy-MM-dd" /></c:set> 
 									<c:if test = "${boardYear == sysYear}">
-									<img src = "./ascloimage/newicon.png" width = "20px" height = "15px" style = "vertical-align:middle;">
+									<img src = "${project}ascloimage/newicon.png" width = "20px" height = "15px" style = "vertical-align:middle;">
 									</c:if>
 									</td>
 									<td>${list.writer}</td>

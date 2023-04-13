@@ -22,8 +22,6 @@
      	<input type = "hidden" name = "member" value = "1">
      	<fieldset>
      		<table>
-     			<col style = "width: 500px;">
-     			<col style = "width: 500px;">
      			<tr>
      				<td>Registered Host</td>
      			</tr>

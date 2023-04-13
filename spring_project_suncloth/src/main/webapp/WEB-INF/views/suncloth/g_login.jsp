@@ -15,8 +15,6 @@
      	<input type = "hidden" name = "member" value = "0">
      	<fieldset>
      		<table>
-     			<col style = "width: 500px;">
-     			<col style = "width: 500px;">
      			<tr>
      				<td>Registered Customers</td>
      			</tr>

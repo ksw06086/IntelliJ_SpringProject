@@ -6,7 +6,7 @@
 	<h2> 삭제 처리 되었습니다. </h2>
 <c:if test="${dcnt == 0}">
 <script type = "text/javascript">
-	errorAlert(deleteError);
+	errorAlert("후기가 정상삭제가 되지 못했습니다. 다시 시도해주세요.");
 </script>
 </c:if>
 <c:if test="${dcnt != 0}">

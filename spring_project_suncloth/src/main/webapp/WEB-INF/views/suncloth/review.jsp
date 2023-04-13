@@ -32,19 +32,19 @@ $(function() {
     	<table>
     		<tr>
     			<td><a href = "notice?choose=1">
-    				<img src = "./ascloimage/notice.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
+    				<img src = "${project}ascloimage/notice.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				공지사항
     				</a>
     			</td>
     			
     			<td><a href = "QnA?choose=2">
-    				<img src = "./ascloimage/qna.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
+    				<img src = "${project}ascloimage/qna.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				상품문의
     				</a>
     			</td>
     			
     			<td><a href = "review?choose=4">
-    				<img src = "./ascloimage/review.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
+    				<img src = "${project}ascloimage/review.png" width = "50px" height = "50px" style = "opacity:0.5;"><br>
     				사용후기
     				</a>
     			</td>
@@ -82,7 +82,7 @@ $(function() {
 						<!-- 상세 페이지 -->
 						<td>
 						<c:if test="${list.file1 != null}">
-						<img src="fileready/${list.file1}" width = "50px" height = "60px">
+						<img src="${project}fileready/${list.file1}" width = "50px" height = "60px">
 						</c:if>
 						</td>
 						<td align = "left">

@@ -188,16 +188,16 @@
 	    </table>
 	    
 	    <p>전체동의</p>
-	    <p><input type = "checkbox">&nbsp;이용약관 및 개인정보 수집 및 이용에 모두 동의합니다.
+	    <p><input name = "allcheck" type = "checkbox" onchange="all_check();">&nbsp;이용약관 및 개인정보 수집 및 이용에 모두 동의합니다.
 	    
 	    <p style = "font-size: .8em; margin-top:30px;"><b>[필수] 이용약관 동의</b></p>
 	    
-	    <p><textarea class = "Box" rows="5" cols="40" style="resize: none; width:100%;">당신은 피카츄를 사랑하십니까?</textarea></p>
+	    <p><textarea name = "use_agree_chk" class = "Box" rows="5" cols="40" style="resize: none; width:100%;" onchange="allcheck_remove();">당신은 피카츄를 사랑하십니까?</textarea></p>
 	    <p style = "font-size: .8em;">이용약관에 동의하십니까? <input type = "checkbox" id = "usechk"> 동의함</p>
 	    
 	    <p style = "font-size: .8em; margin-top:30px;"><b>[필수] 개인정보 수집 및 이용 동의</b></p>
 	    
-	    <p><textarea class = "Box" rows="5" cols="40" style="resize: none; width:100%;">당신은 잠만보를 사랑하십니까?</textarea></p>
+	    <p><textarea name = "data_agree_chk" class = "Box" rows="5" cols="40" style="resize: none; width:100%;" onchange="allcheck_remove();">당신은 잠만보를 사랑하십니까?</textarea></p>
 	    <p style = "font-size: .8em;">개인정보 수집 및 이용에 동의하십니까? <input type = "checkbox" id = "guestdatachk"> 동의함</p>
 	    
 	    <div style = "text-align:center;" id = "joinbtn">

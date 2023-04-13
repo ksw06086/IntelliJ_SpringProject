@@ -12,7 +12,7 @@ function select_color(){
 	if(value != "") {
 	  var params = "color=" + color + "&num="+ value;
 		  
-	  sendRequest(sub_callback, "h_subsize", "GET", params); // search_next.jsp -> 콜백함수로 리턴
+	  sendRequest(sub_color_callback, "h_subsize", "GET", params); // search_next.jsp -> 콜백함수로 리턴
 	}
 }
 
@@ -24,7 +24,7 @@ function select_color(){
  	- result : 출력위치
  */
  
-function sub_callback(){
+function sub_color_callback(){
 	var result = document.getElementById("subsize");
 	// 4 : completed => 전체데이터가 취득환료된 상태
 	if(httpRequest.readyState == 4){ 
@@ -51,7 +51,7 @@ function select_size(){
 	if(value != "") {
 	  var params = "size=" + size + "&color="+ color + "&num="+ value;
 		  
-	  sendRequest(sub_callback, "h_subcslist", "GET", params); // search_next.jsp -> 콜백함수로 리턴
+	  sendRequest(sub_size_callback, "h_subcslist", "GET", params); // search_next.jsp -> 콜백함수로 리턴
 	}
 }
 
@@ -63,7 +63,7 @@ function select_size(){
  	- result : 출력위치
  */
  
-function sub_callback(){
+function sub_size_callback(){
 	var result = document.getElementById("csupdate");
 	// 4 : completed => 전체데이터가 취득환료된 상태
 	if(httpRequest.readyState == 4){ 
@@ -117,7 +117,7 @@ function sub_callback(){
 						<tr>
 			    			<td style = "text-align:center; padding: 10px 0px;">
 			    			<div id = "image" style = "background-color:#ccc; width: 100px; height: 100px; line-height:100px; margin:0px auto;">
-			    			<img src = 'fileready/${vo.mainfile}' width = '100px' height = '100px'></div></td>
+			    			<img src = '${project}fileready/${vo.mainfile}' width = '100px' height = '100px'></div></td>
 			    			<td>${vo.name}
 			    			</td>
 			    		</tr>

@@ -94,7 +94,6 @@
 		</if>
  	</insert>
 
-  	
  	<select id="idPwdCheck" parameterType="java.util.Map" resultType="int">
 		select count(*) from 
  		<if test="member == 0">
@@ -171,7 +170,9 @@
  	</select>
  	
  	<select id="getQnAArticle" parameterType="int" resultType="com.spring.project.dto.QnADTO">
- 		select * from( 
+ 		select num, id writer, state, pwd, subject, content, file1, textType, ref, ref_step, ref_level,
+			   reg_date, ip, writestate, fwnum, nextnum, asubject, bsubject, atexttype, btexttype
+ 		from(
 		select h.*, a.subject asubject, b.subject bsubject, a.texttype atexttype, b.texttype btexttype FROM
 		mvc_QnA_tbl h, mvc_QnA_tbl a, mvc_QnA_tbl b
 		where h.nextnum = a.num(+)
@@ -186,7 +187,9 @@
  	</select>
  	
  	<select id="getreviewArticle" parameterType="int" resultType="com.spring.project.dto.reviewDTO">
- 		select * from( 
+ 		select num, id writer, subject, content, readcnt, file1, reg_date, ip,
+ 		       fwnum, nextnum, asubject, bsubject
+ 		from(
 		select h.*, a.subject asubject, b.subject bsubject FROM
 		mvc_review_tbl h, mvc_review_tbl a, mvc_review_tbl b
 		where h.nextnum = a.num(+)
@@ -244,7 +247,7 @@
  	
  	<!-- 공지 작성 처리 -->
  	<select id="maxnum" parameterType="int" resultType="int">
-		select max(num) from
+		select nvl(max(num), 0) from
 		<if test="choose == 1">
 			mvc_notice_tbl
 		</if>
@@ -273,7 +276,7 @@
 	<update id="QnAupdatestate" parameterType="int">
 	 	update mvc_QnA_tbl set writestate = '답변완료' where num = #{num}
 	 </update>
-	
+
 	<insert id="insertBoard" parameterType="java.util.Map">
 		insert into
 		<if test="choose == 1">
@@ -287,7 +290,7 @@
 		<if test="choose == 3">
 			mvc_QnA_tbl(num, id, state, pwd, subject, content,
 			file1, texttype, ref, ref_step, ref_level, reg_date, ip) 
-			values (QnA_seq.nextval, #{vo.writer}, #{vo.state}, #{vo.pwd}, #{vo.subject}, #{vo.content}, #{vo.file1}, #{vo.textType}, #{ref}, #{ref_step}, #{ref_level}, #{vo.reg_date}, #{vo.ip})
+			values (QnA_seq.nextval, #{vo.writer}, #{vo.state}, #{vo.pwd, jdbcType=VARCHAR}, #{vo.subject}, #{vo.content}, #{vo.file1}, #{vo.textType}, #{ref}, #{ref_step}, #{ref_level}, #{vo.reg_date}, #{vo.ip})
 		</if>
 		<if test="choose == 4">
 			mvc_review_tbl(num, id, subject, content, reg_date, file1, ip)
@@ -377,11 +380,11 @@
 	 </select>
 	 
 	<update id="fwupdate" parameterType="java.util.Map">
-	 	update #{table} set nextnum = #{nextnum} where num = #{fwnum}
+	 	update mvc_QnA_tbl set nextnum = #{nextnum} where num = #{fwnum}
 	</update>
 	
 	<update id="nextupdate" parameterType="java.util.Map">
-	 	update #{table} set fwnum = #{fwnum} where num = #{nextnum}
+	 	update mvc_QnA_tbl set fwnum = #{fwnum} where num = #{nextnum}
 	</update>
 	
 	<delete id="deleteNoticeBoard" parameterType="java.util.Arrays">
@@ -544,9 +547,9 @@
  	</select>
  	
 	<!-- QnA 삭제 -->
-	<select id="getdeleteQnA" resultType="com.spring.project.dto.FAQDTO">
+	<select id="getdeleteQnA" parameterType="int" resultType="com.spring.project.dto.QnADTO">
 	 	select num, id writer, state, pwd, subject, content, reg_date, file1, ref, ref_step, ref_level, ip, fwnum, nextnum, texttype textType, writestate
-	 	from mvc_FAQ_tbl where num=#{num}
+	 	from mvc_QnA_tbl where num=#{num}
 	 </select>
 	
 	 <select id="getReplyCnt" parameterType="java.util.Map" resultType="int">
@@ -650,7 +653,7 @@
 	
 	<delete id="deletereviewBoard" parameterType="java.util.Arrays">
 	 	<![CDATA[
-	 	delete mvc_review_tbl where num = TO_NUMBER(#{array[0]}
+	 	delete mvc_review_tbl where num = TO_NUMBER(#{array[0]})
 	 	]]>
 	</delete>
  	
@@ -676,7 +679,7 @@
 	
 	<delete id="deletereplyBoard" parameterType="java.util.Arrays">
 	 	<![CDATA[
-	 	delete mvc_reply_tbl where num = TO_NUMBER(#{array[0]}
+	 	delete mvc_reply_tbl where num = TO_NUMBER(#{array[0]})
 	 	]]>
 	</delete>
 
@@ -849,8 +852,7 @@
  		and c.brandnum = brand.num
  		and c.num = #{num})
  	</select>
- 	
-	
+
 	<!-- product 수정 -->
 	<update id="updateproduct" parameterType="com.spring.project.dto.clothDTO">
 	 	update mvc_cloths_tbl
@@ -1131,7 +1133,7 @@
 	
 	<!-- 주문 상태별 갯수 가져오기 -->
 	<select id="selectstateCnt" parameterType="java.util.Map" resultType="int">
- 		select count(*) as cnt from mvc_order_tbl where state = #{state} and gid = #{strid}
+ 		select count(*) as cnt from mvc_order_tbl where state = #{state} and gid = #{strId}
  	</select>
 	
 	<!-- 관리자 전용 주문 상태 변경 -->
@@ -1142,17 +1144,22 @@
 	</update>
 	
 	<update id="h_plusplus" parameterType="java.util.Map">
-	 	pdate mvc_guest_tbl 
+	 	update mvc_guest_tbl
 	 	set plus = plus + #{plus}
 	 	where id = #{strid}
 	</update>
 	
 	<update id="h_plusminus" parameterType="java.util.Map">
-	 	pdate mvc_guest_tbl 
+	 	update mvc_guest_tbl
 	 	set plus = plus - #{plus}
 	 	where id = #{strid}
 	</update>
-	
+
+	<!-- product 리스트 -->
+	<select id="h_plusgetting" parameterType="int" resultType="int">
+		select plus from mvc_cloths_tbl where num = #{prdnum}
+	</select>
+
 	<select id="getMemberlist" parameterType="java.util.Map" resultType="com.spring.project.dto.MemberDTO">
  		select id, pwd, name, address, address1, address2, homephone, plus, hp, 
  		email, birth, birthtype, acchost, bank, acc, reg_date, visitcnt, key, auth, hostmemo from 

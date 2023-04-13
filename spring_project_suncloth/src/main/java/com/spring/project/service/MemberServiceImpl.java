@@ -974,7 +974,7 @@ public class MemberServiceImpl implements MemberService{
 		// 인코딩 타입 : 한글 파일명이 열화되는 것을 방지함
 		String encType = "UTF-8";
 		try {
-			if(file.getOriginalFilename() != null) {
+			if(String.valueOf(file.getOriginalFilename()) != "") {
 				file.transferTo(new File(saveDir+file.getOriginalFilename()));
 
 				FileInputStream fis = new FileInputStream(saveDir + file.getOriginalFilename());
@@ -1489,8 +1489,8 @@ public class MemberServiceImpl implements MemberService{
 		
 		// 4단계. 다형성 적용, 싱글톤 방식으로 dao 객체 생성
 		Map<String, Object> membermap = new HashMap<String, Object>();
-		membermap.put("strid", strid);
-		membermap.put("strpwd", strpwd);
+		membermap.put("id", strid);
+		membermap.put("pwd", strpwd);
 		membermap.put("member", (Integer)req.getSession().getAttribute("memCnt"));
 		int pwdCnt = 0;
 		if(req.getSession().getAttribute("memId") != null) {
@@ -1563,6 +1563,7 @@ public class MemberServiceImpl implements MemberService{
 		
 		// 5-2단계. 맞으면 게시글 삭제
 		deleteCnt = memberRepository.deletereviewBoard(checked);
+		System.out.println("deleteCnt : " + deleteCnt);
 		
 		// 6단계. request나 session에 처리결과를 저장(jsp에 전달하기 위함)
 		model.addAttribute("dcnt", deleteCnt);
@@ -3508,7 +3509,7 @@ public class MemberServiceImpl implements MemberService{
 		map.put("firstday", null);
 		map.put("lastday", null);
 		map.put("state", null);
-		map.put("strid", (String)req.getSession().getAttribute("memId"));
+		map.put("strId", (String)req.getSession().getAttribute("memId"));
 		map.put("state", "입금전");
 		
 		// 5-2단계. 게시글 목록 조회
@@ -3905,7 +3906,7 @@ public class MemberServiceImpl implements MemberService{
 		year = req.getParameter("yearname");
 		
 		if(year == null) {
-			year = "2019";
+			year = "2023";
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("year", year);
@@ -3923,7 +3924,7 @@ public class MemberServiceImpl implements MemberService{
 		year = req.getParameter("yearname");
 		
 		if(year == null) {
-			year = "2019";
+			year = "2023";
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("year", year);
@@ -3940,7 +3941,7 @@ public class MemberServiceImpl implements MemberService{
 		year = req.getParameter("yearname");
 		
 		if(year == null) {
-			year = "2019";
+			year = "2023";
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("year", year);
@@ -3961,7 +3962,7 @@ public class MemberServiceImpl implements MemberService{
 		year = req.getParameter("yearname");
 		
 		if(year == null) {
-			year = "2019";
+			year = "2023";
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("year", year);
@@ -3986,7 +3987,7 @@ public class MemberServiceImpl implements MemberService{
 		year = req.getParameter("yearname");
 		
 		if(year == null) {
-			year = "2019";
+			year = "2023";
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("year", year);
@@ -4005,7 +4006,7 @@ public class MemberServiceImpl implements MemberService{
 		year = req.getParameter("yearname");
 		
 		if(year == null) {
-			year = "2019";
+			year = "2023";
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("year", year);

@@ -52,7 +52,7 @@
 			<tr>
 				<td>
 					<div>
-						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
 						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
@@ -61,7 +61,7 @@
 				<c:if test="${status.index%4 == 1}">
 				<td>
 					<div>
-						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
 						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
@@ -70,7 +70,7 @@
 				<c:if test="${status.index%4 == 2}">
 				<td>
 					<div>
-						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
 						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>
@@ -79,7 +79,7 @@
 				<c:if test="${status.index%4 == 3}">
 				<td>
 					<div>
-						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
+						<li><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "320px" height = "350px"></a></li>
 						<li><a href = "productclick?num=${list.num}&name=${list.name}">${list.name}</a></li>
 						<li>KRW ${list.saleprice}</li>
 					</div>

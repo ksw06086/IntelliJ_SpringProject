@@ -20,10 +20,10 @@
      <div id = "threemenu">
 		<ul style = "padding:0px;">
 			<c:forEach var = "list" items = "${list}" varStatus="status" begin="0" end="1">
-				<li style = "margin-right: 27px"><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "405px" height = "300px"></a></li>
+				<li style = "margin-right: 27px"><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "350px" height = "300px"></a></li>
 			</c:forEach>
 			<c:forEach var = "list" items = "${list}" varStatus="status" begin="2" end="2">
-				<li style = "margin-right: 27px"><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "405px" height = "300px"></a></li>
+				<li style = "margin-right: 27px"><a href = "productclick?num=${list.num}&name=${list.name}"><img src = "${project}fileready/${list.mainfile}" width = "350px" height = "300px"></a></li>
 			</c:forEach>
 		</ul>
 	</div>
